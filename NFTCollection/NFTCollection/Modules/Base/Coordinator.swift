@@ -5,7 +5,7 @@
 //  Created by Greener Chen on 2023/2/23.
 //
 
-import Foundation
+import UIKit
 import RxSwift
 
 enum NavigationTransitionStyle {
@@ -42,7 +42,13 @@ class Coordinator: Coordinatable {
     /// The listener of this `Coordinator`, which communicates with the parent coordinator
     var listener: Listenable?
     
+    /// The interactor of this `Coordinator`
     var interactor: Interactable?
+    
+    /// The view controller of the top most child
+    var topMostViewController: UIViewController? {
+        children.last?.presenter?.viewController
+    }
     
     init(children: [Coordinator] = [], presenter: Presentable? = nil, listener: Listenable? = nil, interactor: Interactable? = nil) {
         self.children = children
