@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol AssetCollectionPresentableListener: Listenable {
+    func getAssets()
+    func didSelectItem(asset: Asset)
+}
+
 class AssetCollectionViewController: UIViewController {
 
     override func viewDidLoad() {
