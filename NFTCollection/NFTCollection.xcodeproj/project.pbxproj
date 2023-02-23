@@ -13,6 +13,11 @@
 		AA91547B29A7A5F200A5DB1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA91547929A7A5F200A5DB1F /* Main.storyboard */; };
 		AA91547D29A7A5F400A5DB1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA91547C29A7A5F400A5DB1F /* Assets.xcassets */; };
 		AA91548029A7A5F400A5DB1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA91547E29A7A5F400A5DB1F /* LaunchScreen.storyboard */; };
+		AA91549429A7A77D00A5DB1F /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = AA91549329A7A77D00A5DB1F /* RxCocoa */; };
+		AA91549629A7A77E00A5DB1F /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = AA91549529A7A77E00A5DB1F /* RxRelay */; };
+		AA91549829A7A77E00A5DB1F /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AA91549729A7A77E00A5DB1F /* RxSwift */; };
+		AA91549B29A7A79C00A5DB1F /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = AA91549A29A7A79C00A5DB1F /* ObjectMapper */; };
+		AA91549E29A7A7C900A5DB1F /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = AA91549D29A7A7C900A5DB1F /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +36,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA91549B29A7A79C00A5DB1F /* ObjectMapper in Frameworks */,
+				AA91549829A7A77E00A5DB1F /* RxSwift in Frameworks */,
+				AA91549629A7A77E00A5DB1F /* RxRelay in Frameworks */,
+				AA91549429A7A77D00A5DB1F /* RxCocoa in Frameworks */,
+				AA91549E29A7A7C900A5DB1F /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +165,13 @@
 			dependencies = (
 			);
 			name = NFTCollection;
+			packageProductDependencies = (
+				AA91549329A7A77D00A5DB1F /* RxCocoa */,
+				AA91549529A7A77E00A5DB1F /* RxRelay */,
+				AA91549729A7A77E00A5DB1F /* RxSwift */,
+				AA91549A29A7A79C00A5DB1F /* ObjectMapper */,
+				AA91549D29A7A7C900A5DB1F /* SDWebImage */,
+			);
 			productName = NFTCollection;
 			productReference = AA91547029A7A5F200A5DB1F /* NFTCollection.app */;
 			productType = "com.apple.product-type.application";
@@ -183,6 +200,11 @@
 				Base,
 			);
 			mainGroup = AA91546729A7A5F200A5DB1F;
+			packageReferences = (
+				AA91549229A7A77D00A5DB1F /* XCRemoteSwiftPackageReference "RxSwift" */,
+				AA91549929A7A79C00A5DB1F /* XCRemoteSwiftPackageReference "ObjectMapper" */,
+				AA91549C29A7A7C900A5DB1F /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = AA91547129A7A5F200A5DB1F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -430,6 +452,61 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AA91549229A7A77D00A5DB1F /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.0;
+			};
+		};
+		AA91549929A7A79C00A5DB1F /* XCRemoteSwiftPackageReference "ObjectMapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tristanhimmelman/ObjectMapper.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
+		AA91549C29A7A7C900A5DB1F /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AA91549329A7A77D00A5DB1F /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA91549229A7A77D00A5DB1F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		AA91549529A7A77E00A5DB1F /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA91549229A7A77D00A5DB1F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		AA91549729A7A77E00A5DB1F /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA91549229A7A77D00A5DB1F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		AA91549A29A7A79C00A5DB1F /* ObjectMapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA91549929A7A79C00A5DB1F /* XCRemoteSwiftPackageReference "ObjectMapper" */;
+			productName = ObjectMapper;
+		};
+		AA91549D29A7A7C900A5DB1F /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA91549C29A7A7C900A5DB1F /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AA91546829A7A5F200A5DB1F /* Project object */;
 }
