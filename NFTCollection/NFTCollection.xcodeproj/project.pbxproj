@@ -157,7 +157,10 @@
 		AA91548E29A7A66A00A5DB1F /* Asset Collection */ = {
 			isa = PBXGroup;
 			children = (
-				AA91547729A7A5F200A5DB1F /* AssetCollectionViewController.swift */,
+				AA9154AE29A7AB7000A5DB1F /* Coordinator */,
+				AA9154AB29A7AAFE00A5DB1F /* Domain */,
+				AA9154AD29A7AB1D00A5DB1F /* View Model */,
+				AA9154AC29A7AB1100A5DB1F /* View */,
 			);
 			path = "Asset Collection";
 			sourceTree = "<group>";
@@ -167,6 +170,36 @@
 			children = (
 			);
 			path = "Asset Detail";
+			sourceTree = "<group>";
+		};
+		AA9154AB29A7AAFE00A5DB1F /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				AA9154A929A7AA7000A5DB1F /* AssetLoadable.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		AA9154AC29A7AB1100A5DB1F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA91547729A7A5F200A5DB1F /* AssetCollectionViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AA9154AD29A7AB1D00A5DB1F /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		AA9154AE29A7AB7000A5DB1F /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
