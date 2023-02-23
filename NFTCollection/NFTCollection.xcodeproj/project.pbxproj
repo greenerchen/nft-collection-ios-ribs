@@ -18,6 +18,8 @@
 		AA91549829A7A77E00A5DB1F /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AA91549729A7A77E00A5DB1F /* RxSwift */; };
 		AA91549B29A7A79C00A5DB1F /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = AA91549A29A7A79C00A5DB1F /* ObjectMapper */; };
 		AA91549E29A7A7C900A5DB1F /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = AA91549D29A7A7C900A5DB1F /* SDWebImage */; };
+		AA9154A029A7A85E00A5DB1F /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA91549F29A7A85E00A5DB1F /* Asset.swift */; };
+		AA9154A229A7A88B00A5DB1F /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154A129A7A88B00A5DB1F /* Wallet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		AA91547C29A7A5F400A5DB1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA91547F29A7A5F400A5DB1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA91548129A7A5F400A5DB1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA91549F29A7A85E00A5DB1F /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		AA9154A129A7A88B00A5DB1F /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 		AA91548829A7A61300A5DB1F /* Domain Models */ = {
 			isa = PBXGroup;
 			children = (
+				AA91549F29A7A85E00A5DB1F /* Asset.swift */,
+				AA9154A129A7A88B00A5DB1F /* Wallet.swift */,
 			);
 			path = "Domain Models";
 			sourceTree = "<group>";
@@ -232,8 +238,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA9154A229A7A88B00A5DB1F /* Wallet.swift in Sources */,
 				AA91547829A7A5F200A5DB1F /* AssetCollectionViewController.swift in Sources */,
 				AA91547429A7A5F200A5DB1F /* AppDelegate.swift in Sources */,
+				AA9154A029A7A85E00A5DB1F /* Asset.swift in Sources */,
 				AA91547629A7A5F200A5DB1F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
