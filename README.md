@@ -7,6 +7,7 @@ This project is to fetch the collections on an ethereum address using [OpenSea A
 - [ ] Display the specific item detail page
 
 # Flowchart
+![Flowchart](NFTCollectionFlowchart.png)
 
 # Payload Contract
 ```
@@ -49,7 +50,10 @@ cursor (string): A cursor pointing to the page to retrieve
 | permanentlink | String |
 
 # App Architecture
+![Architecture](NFTCollectionArchitecture.png)
 
-
+# State Management
+Coordinators manage app states (models) in the coordinator tree.
+![State Management](NFTCollectionStateManagement.png)
 
 # Screenshots
