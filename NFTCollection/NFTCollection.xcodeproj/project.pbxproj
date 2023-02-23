@@ -25,6 +25,10 @@
 		AA9154A829A7AA6000A5DB1F /* OpenseaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154A729A7AA6000A5DB1F /* OpenseaRepository.swift */; };
 		AA9154AA29A7AA7000A5DB1F /* AssetLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154A929A7AA7000A5DB1F /* AssetLoadable.swift */; };
 		AA9154B029A7AC3400A5DB1F /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154AF29A7AC3400A5DB1F /* URLBuilder.swift */; };
+		AA9154B329A7B0B000A5DB1F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154B229A7B0B000A5DB1F /* Coordinator.swift */; };
+		AA9154B529A7B0E400A5DB1F /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154B429A7B0E400A5DB1F /* Interactor.swift */; };
+		AA9154B729A7B10B00A5DB1F /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154B629A7B10B00A5DB1F /* Presenter.swift */; };
+		AA9154B929A7B13900A5DB1F /* Listenable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154B829A7B13900A5DB1F /* Listenable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +47,10 @@
 		AA9154A729A7AA6000A5DB1F /* OpenseaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenseaRepository.swift; sourceTree = "<group>"; };
 		AA9154A929A7AA7000A5DB1F /* AssetLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetLoadable.swift; sourceTree = "<group>"; };
 		AA9154AF29A7AC3400A5DB1F /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
+		AA9154B229A7B0B000A5DB1F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		AA9154B429A7B0E400A5DB1F /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		AA9154B629A7B10B00A5DB1F /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		AA9154B829A7B13900A5DB1F /* Listenable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listenable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +124,7 @@
 			children = (
 				AA91548E29A7A66A00A5DB1F /* Asset Collection */,
 				AA91548F29A7A67500A5DB1F /* Asset Detail */,
+				AA9154B129A7B02400A5DB1F /* Base */,
 				AA91548D29A7A66400A5DB1F /* Root */,
 			);
 			path = Modules;
@@ -202,6 +211,17 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		AA9154B129A7B02400A5DB1F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				AA9154B229A7B0B000A5DB1F /* Coordinator.swift */,
+				AA9154B429A7B0E400A5DB1F /* Interactor.swift */,
+				AA9154B629A7B10B00A5DB1F /* Presenter.swift */,
+				AA9154B829A7B13900A5DB1F /* Listenable.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -285,14 +305,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA9154B929A7B13900A5DB1F /* Listenable.swift in Sources */,
 				AA9154A229A7A88B00A5DB1F /* Wallet.swift in Sources */,
 				AA91547829A7A5F200A5DB1F /* AssetCollectionViewController.swift in Sources */,
 				AA9154A629A7A9EB00A5DB1F /* MockHTTPClient.swift in Sources */,
 				AA9154A429A7A90300A5DB1F /* RxSwiftHTTPClient.swift in Sources */,
 				AA91547429A7A5F200A5DB1F /* AppDelegate.swift in Sources */,
 				AA9154B029A7AC3400A5DB1F /* URLBuilder.swift in Sources */,
+				AA9154B529A7B0E400A5DB1F /* Interactor.swift in Sources */,
+				AA9154B329A7B0B000A5DB1F /* Coordinator.swift in Sources */,
 				AA9154A829A7AA6000A5DB1F /* OpenseaRepository.swift in Sources */,
 				AA9154A029A7A85E00A5DB1F /* Asset.swift in Sources */,
+				AA9154B729A7B10B00A5DB1F /* Presenter.swift in Sources */,
 				AA9154AA29A7AA7000A5DB1F /* AssetLoadable.swift in Sources */,
 				AA91547629A7A5F200A5DB1F /* SceneDelegate.swift in Sources */,
 			);
