@@ -12,7 +12,7 @@ enum OpenseaRepositoryError: Error {
     case invalidURL
 }
 
-struct OpenseaRepository {
+class OpenseaRepository {
     private let httpClient: RxSwiftHTTPClient
     private let endpoint = "https://api.opensea.io/api/v1/assets"
     private var nextCursor: String?
@@ -38,7 +38,7 @@ extension OpenseaRepository: AssetsLoadable {
             .map { [weak self] Data in
                 do {
                     let jsonString = String(data: Data, encoding: .utf8)
-                    let assetsResponse = try AssetResponse(JSONString: jsonString)
+                    let assetsResponse = try AssetResponse(JSONString: jsonString!)
                     self?.nextCursor = assetsResponse.next
                     return AssetsResult(assets: assetsResponse.assets, nextCursor: assetsResponse.next)
                 } catch {
