@@ -37,7 +37,7 @@ extension OpenseaRepository: AssetsLoadable {
         guard let url: URL = URLBuilder(urlString: endpoint)
             .appendQuery(name: "format", value: "json")
             .appendQuery(name: "owner", value: wallet.etherAddress)
-            .appendQuery(name: "next", value: nextCursor)
+            .appendQuery(name: "cursor", value: nextCursor)
             .build() else {
             return .error(OpenseaRepositoryError.invalidURL)
         }
