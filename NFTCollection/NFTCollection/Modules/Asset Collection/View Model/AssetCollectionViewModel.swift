@@ -16,14 +16,10 @@ protocol AssetCollectionInteractable: Interactable {
 
 class AssetCollectionViewModel: Interactor, AssetCollectionInteractable {
     
-    enum State {
-        case loading
-        case loaded
-    }
+    // MARK: Combine publishers
     
-    let assets = BehaviorSubject<[Asset]>(value: [])
+    var assets = BehaviorSubject<[Asset]>(value: [])
     lazy var ethBalance = BehaviorSubject<Double>(value: wallet.balance)
-    let state = BehaviorSubject<State>(value: .loaded)
     
     init(
         router: AssetCollectionRouting? = nil,
@@ -46,20 +42,25 @@ class AssetCollectionViewModel: Interactor, AssetCollectionInteractable {
     lazy var ethRepository: EthererumLoadable = InfuraRepository(httpClient: RxHTTPClient(), wallet: wallet)
     
     private let bag = DisposeBag()
+    
+    func getAssets() {
+        assetRepository.loadAssets()
+            .observe(on: MainScheduler.asyncInstance)
+            .subscribe { [weak self] assetResult in
+                self?.assets.onNext(assetResult.assets)
+            } onError: { error in
+                // TODO: the presenter shows a error dialogue
+            }
+            .disposed(by: bag)
+    }
 }
 
 // MARK: - AssetCollectionPresentableListener Impl
 
 extension AssetCollectionViewModel: AssetCollectionPresentableListener {
     func getAssets() -> Observable<[Asset]> {
-        state
-            .asObservable()
-            .filter { $0 != .loading }
-            .flatMap { [unowned self] _ in
-                self.assetRepository
-                    .loadAssets()
-                    .map { $0.assets }
-            }
+        assetRepository.loadAssets()
+            .map { $0.assets }
     }
     
     func didSelectItem(asset: Asset) {
