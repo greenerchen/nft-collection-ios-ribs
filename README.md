@@ -20,8 +20,11 @@ https://user-images.githubusercontent.com/1248888/221095449-868b75f8-9c81-422c-b
 ![Flowchart](NFTCollectionFlowchart.png)
 
 # Payload Contract
+## OpenSea
+- Base url: `https://api.opensea.io`
+
 ```
-GET /v1/assets
+GET /api/v1/assets
 
 Query Parameters:
 format (string): The format of response: json
@@ -49,6 +52,33 @@ cursor (string): A cursor pointing to the page to retrieve
 }
 ```
 
+## Infura JSON-RPC Server
+- Base url: `https://mainnet.infura.io/v3/{INFURA_API_KEY}`
+
+Get ETH Balance
+
+```
+HTTP method: POST
+
+Request Body
+{
+  "jsonrpc": "2.0",
+  "method": "eth_getBalance",
+  "params": [
+    "0x19818f44faf5a217f619aff0fd487cb2a55cca65", // ethereum address
+    "latest"
+  ],
+  "id": 1
+}
+
+200 RESPONSE
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": "0x3bd8ae5cc6f1f60" // Balance (Wei) in hex format. 1 Ether = 1000000000000000000 Wei
+}
+```
+
 # Model Specs
 ## Asset
 | Property | Type |
@@ -66,11 +96,11 @@ cursor (string): A cursor pointing to the page to retrieve
 | balance | Double |
 
 # App Architecture
-This projecct adopts the MVVM-C pattern for presentation and navigation and the repository pattern for fetching remote data.
+This projecct adopts the MVVM-C pattern for interaction, presentation, navigation and the repository pattern for fetching remote data.
 
 ![Architecture](NFTCollectionArchitecture.png)
 
 # State Management
-Coordinators manage app states (models) in a tree.
+Coordinators manage app states in a tree. Each coordinator node is a doubly linked-list node, which enables communication with its parent node and children nodes.
 
 ![State Management](NFTCollectionStateManagement.png)
