@@ -2,7 +2,7 @@
 This project is to fetch the collections on an ethereum address using [OpenSea API](https://docs.opensea.io/reference#getting-assets) and display a collection list and respective detail information.
 
 # Features
-- [ ] Fetch NFT assets from OpenSea API https://api.opensea.io/api
+- [x] Fetch NFT assets from OpenSea API https://api.opensea.io/api
 - [x] Display a collection page using UIKit and RxSwift
 - [x] Display the specific asset detail page using SwiftUI
 - [x] Display the fetched ETH balance on the title of the collection list page
@@ -10,7 +10,9 @@ This project is to fetch the collections on an ethereum address using [OpenSea A
 # Use Cases
 - [x] Display a collection page and scroll down to load more content
 
-https://user-images.githubusercontent.com/1248888/221095418-6a4c2ba9-2a25-44ec-b26d-8e368041d27d.mp4
+https://user-images.githubusercontent.com/1248888/221117540-7aba85f6-7649-4ac6-a33d-a671cb2583d2.mp4
+
+
 
 - [x] Tap an asset item in the collection page to navigate to the specific asset detail page and open the marketplace link
 
