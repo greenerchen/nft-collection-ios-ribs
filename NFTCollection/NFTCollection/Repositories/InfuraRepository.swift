@@ -49,20 +49,20 @@ extension InfuraRepository: EthererumLoadable {
 protocol RPCJSONRequest {
     var jsonrpc: String { get set }
     var method: String { get set }
-    var params: String { get set }
+    var params: [String] { get set }
     var id: Int { get set }
 }
 
 struct EthGetBalanceParams: Codable, RPCJSONRequest {
     var jsonrpc: String
     var method: String
-    var params: String
+    var params: [String]
     var id: Int
     
     init(jsonrpc: String = "2.0", method: String = "eth_getBalance", ethAddress: String, id: Int = 1) {
         self.jsonrpc = jsonrpc
         self.method = method
-        self.params = #"[\#(ethAddress),"latest"]"#
+        self.params = [ethAddress, "latest"]
         self.id = id
     }
     
