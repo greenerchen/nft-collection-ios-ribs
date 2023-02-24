@@ -49,7 +49,7 @@ cursor (string): A cursor pointing to the page to retrieve
 }
 ```
 
-# Model Spec
+# Model Specs
 ## Asset
 | Property | Type |
 | ----- | ----- |
@@ -58,6 +58,12 @@ cursor (string): A cursor pointing to the page to retrieve
 | name | String |
 | description | String |
 | permanentlink | String |
+
+## Wallet
+| Property | Type |
+| ----- | ----- |
+| etherAddress | String |
+| balance | Double |
 
 # App Architecture
 This projecct adopts the MVVM-C pattern for presentation and navigation and the repository pattern for fetching remote data.
