@@ -61,4 +61,7 @@ extension AssetCollectionViewModel: AssetCollectionPresentableListener {
             .map { $0.assets }
     }
     
+    func didSelectItem(asset: Asset) {
+        router?.attachAssetDetail(withAsset: asset, transitionStyle: .pop)
+    }
 }

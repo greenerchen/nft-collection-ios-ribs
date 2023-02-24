@@ -23,7 +23,7 @@ protocol AssetCollectionBuildable {
 
 class AssetCollectionPresenter: Presenter, AssetCollectionPresentable {
     func pushViewController(_ viewController: UIViewController) {
-        viewController.navigationController?.pushViewController(viewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
@@ -38,7 +38,13 @@ class AssetCollectionCoordinator: Coordinator {
 
 extension AssetCollectionCoordinator: AssetCollectionRouting {
     func attachAssetDetail(withAsset asset: Asset, transitionStyle: NavigationTransitionStyle) {
-        
+        let coordinator = AssetDetailCoordinator.build(withListener: self, asset: asset)
+        attachChild(coordinator)
+        guard let viewController = topMostViewController else { return }
+        switch transitionStyle {
+        case .pop:
+            (presenter as? AssetCollectionPresenter)?.pushViewController(viewController)
+        }
     }
 }
 
@@ -59,6 +65,11 @@ extension AssetCollectionCoordinator: AssetCollectionBuildable {
         return coordinator
     }
 }
+
+// MARK: - AssetDetailListenable Impl
+extension AssetCollectionCoordinator: AssetDetailListenable {
+    func getNavigationController() -> UINavigationController? {
+        presenter?.navigationController
     }
 }
 

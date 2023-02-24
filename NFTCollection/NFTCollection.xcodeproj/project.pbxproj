@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA6F320C29A8492300AA4925 /* AssetDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F320B29A8492300AA4925 /* AssetDetailCoordinator.swift */; };
+		AA6F320E29A8498900AA4925 /* AssetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F320D29A8498900AA4925 /* AssetDetailView.swift */; };
+		AA6F321029A849A500AA4925 /* AssetDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F320F29A849A500AA4925 /* AssetDetailViewModel.swift */; };
+		AA6F321729A84D7C00AA4925 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = AA6F321629A84D7C00AA4925 /* SDWebImage */; };
+		AA6F321A29A84F2200AA4925 /* BlueCapsuleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F321929A84F2200AA4925 /* BlueCapsuleButtonStyle.swift */; };
 		AA91547429A7A5F200A5DB1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA91547329A7A5F200A5DB1F /* AppDelegate.swift */; };
 		AA91547629A7A5F200A5DB1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA91547529A7A5F200A5DB1F /* SceneDelegate.swift */; };
 		AA91547829A7A5F200A5DB1F /* AssetCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA91547729A7A5F200A5DB1F /* AssetCollectionViewController.swift */; };
@@ -16,7 +21,6 @@
 		AA91549629A7A77E00A5DB1F /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = AA91549529A7A77E00A5DB1F /* RxRelay */; };
 		AA91549829A7A77E00A5DB1F /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AA91549729A7A77E00A5DB1F /* RxSwift */; };
 		AA91549B29A7A79C00A5DB1F /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = AA91549A29A7A79C00A5DB1F /* ObjectMapper */; };
-		AA91549E29A7A7C900A5DB1F /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = AA91549D29A7A7C900A5DB1F /* SDWebImage */; };
 		AA9154A029A7A85E00A5DB1F /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA91549F29A7A85E00A5DB1F /* Asset.swift */; };
 		AA9154A229A7A88B00A5DB1F /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154A129A7A88B00A5DB1F /* Wallet.swift */; };
 		AA9154A429A7A90300A5DB1F /* RxSwiftHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154A329A7A90300A5DB1F /* RxSwiftHTTPClient.swift */; };
@@ -32,9 +36,15 @@
 		AA9154BD29A7B31D00A5DB1F /* AssetCollectionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154BC29A7B31D00A5DB1F /* AssetCollectionCoordinator.swift */; };
 		AA9154BF29A7B38D00A5DB1F /* AssetCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154BE29A7B38D00A5DB1F /* AssetCollectionViewModel.swift */; };
 		AA9154C229A7BF2500A5DB1F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AA9154C129A7BF2500A5DB1F /* SnapKit */; };
+		AA9154D129A7C0E200A5DB1F /* AssetCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154D029A7C0E200A5DB1F /* AssetCollectionCell.swift */; };
+		AA9154D329A7C10E00A5DB1F /* AssetCollectionCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154D229A7C10E00A5DB1F /* AssetCollectionCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA6F320B29A8492300AA4925 /* AssetDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailCoordinator.swift; sourceTree = "<group>"; };
+		AA6F320D29A8498900AA4925 /* AssetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailView.swift; sourceTree = "<group>"; };
+		AA6F320F29A849A500AA4925 /* AssetDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailViewModel.swift; sourceTree = "<group>"; };
+		AA6F321929A84F2200AA4925 /* BlueCapsuleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueCapsuleButtonStyle.swift; sourceTree = "<group>"; };
 		AA91547029A7A5F200A5DB1F /* NFTCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NFTCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA91547329A7A5F200A5DB1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA91547529A7A5F200A5DB1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +66,8 @@
 		AA9154BA29A7B1EC00A5DB1F /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 		AA9154BC29A7B31D00A5DB1F /* AssetCollectionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCollectionCoordinator.swift; sourceTree = "<group>"; };
 		AA9154BE29A7B38D00A5DB1F /* AssetCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCollectionViewModel.swift; sourceTree = "<group>"; };
+		AA9154D029A7C0E200A5DB1F /* AssetCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCollectionCell.swift; sourceTree = "<group>"; };
+		AA9154D229A7C10E00A5DB1F /* AssetCollectionCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCollectionCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,18 +75,50 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA6F321729A84D7C00AA4925 /* SDWebImage in Frameworks */,
 				AA91549B29A7A79C00A5DB1F /* ObjectMapper in Frameworks */,
 				AA91549829A7A77E00A5DB1F /* RxSwift in Frameworks */,
 				AA91549629A7A77E00A5DB1F /* RxRelay in Frameworks */,
 				AA9154C229A7BF2500A5DB1F /* SnapKit in Frameworks */,
 				AA91549429A7A77D00A5DB1F /* RxCocoa in Frameworks */,
-				AA91549E29A7A7C900A5DB1F /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA6F320829A848EB00AA4925 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA6F320D29A8498900AA4925 /* AssetDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AA6F320929A848F100AA4925 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				AA6F320F29A849A500AA4925 /* AssetDetailViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		AA6F320A29A848F800AA4925 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				AA6F320B29A8492300AA4925 /* AssetDetailCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		AA6F321829A84EFD00AA4925 /* UI Elements */ = {
+			isa = PBXGroup;
+			children = (
+				AA6F321929A84F2200AA4925 /* BlueCapsuleButtonStyle.swift */,
+			);
+			path = "UI Elements";
+			sourceTree = "<group>";
+		};
 		AA91546729A7A5F200A5DB1F = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +143,7 @@
 				AA91548929A7A61D00A5DB1F /* Modules */,
 				AA91548B29A7A63C00A5DB1F /* Networking */,
 				AA91548C29A7A64400A5DB1F /* Repositories */,
+				AA6F321829A84EFD00AA4925 /* UI Elements */,
 				AA91548A29A7A62700A5DB1F /* Resources */,
 				AA91548129A7A5F400A5DB1F /* Info.plist */,
 			);
@@ -174,8 +219,8 @@
 			children = (
 				AA9154AE29A7AB7000A5DB1F /* Coordinator */,
 				AA9154AB29A7AAFE00A5DB1F /* Domain */,
-				AA9154AD29A7AB1D00A5DB1F /* View Model */,
 				AA9154AC29A7AB1100A5DB1F /* View */,
+				AA9154AD29A7AB1D00A5DB1F /* View Model */,
 			);
 			path = "Asset Collection";
 			sourceTree = "<group>";
@@ -183,6 +228,9 @@
 		AA91548F29A7A67500A5DB1F /* Asset Detail */ = {
 			isa = PBXGroup;
 			children = (
+				AA6F320A29A848F800AA4925 /* Coordinator */,
+				AA6F320829A848EB00AA4925 /* View */,
+				AA6F320929A848F100AA4925 /* View Model */,
 			);
 			path = "Asset Detail";
 			sourceTree = "<group>";
@@ -199,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				AA91547729A7A5F200A5DB1F /* AssetCollectionViewController.swift */,
+				AA9154D029A7C0E200A5DB1F /* AssetCollectionCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -207,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				AA9154BE29A7B38D00A5DB1F /* AssetCollectionViewModel.swift */,
+				AA9154D229A7C10E00A5DB1F /* AssetCollectionCellModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -251,8 +301,8 @@
 				AA91549529A7A77E00A5DB1F /* RxRelay */,
 				AA91549729A7A77E00A5DB1F /* RxSwift */,
 				AA91549A29A7A79C00A5DB1F /* ObjectMapper */,
-				AA91549D29A7A7C900A5DB1F /* SDWebImage */,
 				AA9154C129A7BF2500A5DB1F /* SnapKit */,
+				AA6F321629A84D7C00AA4925 /* SDWebImage */,
 			);
 			productName = NFTCollection;
 			productReference = AA91547029A7A5F200A5DB1F /* NFTCollection.app */;
@@ -285,8 +335,8 @@
 			packageReferences = (
 				AA91549229A7A77D00A5DB1F /* XCRemoteSwiftPackageReference "RxSwift" */,
 				AA91549929A7A79C00A5DB1F /* XCRemoteSwiftPackageReference "ObjectMapper" */,
-				AA91549C29A7A7C900A5DB1F /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				AA9154C029A7BF2500A5DB1F /* XCRemoteSwiftPackageReference "SnapKit" */,
+				AA6F321529A84D7C00AA4925 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = AA91547129A7A5F200A5DB1F /* Products */;
 			projectDirPath = "";
@@ -319,16 +369,22 @@
 				AA91547829A7A5F200A5DB1F /* AssetCollectionViewController.swift in Sources */,
 				AA9154A629A7A9EB00A5DB1F /* MockHTTPClient.swift in Sources */,
 				AA9154A429A7A90300A5DB1F /* RxSwiftHTTPClient.swift in Sources */,
+				AA6F320E29A8498900AA4925 /* AssetDetailView.swift in Sources */,
+				AA6F321029A849A500AA4925 /* AssetDetailViewModel.swift in Sources */,
 				AA91547429A7A5F200A5DB1F /* AppDelegate.swift in Sources */,
 				AA9154BD29A7B31D00A5DB1F /* AssetCollectionCoordinator.swift in Sources */,
 				AA9154B029A7AC3400A5DB1F /* URLBuilder.swift in Sources */,
 				AA9154BB29A7B1EC00A5DB1F /* RootCoordinator.swift in Sources */,
 				AA9154B529A7B0E400A5DB1F /* Interactor.swift in Sources */,
+				AA6F320C29A8492300AA4925 /* AssetDetailCoordinator.swift in Sources */,
 				AA9154B329A7B0B000A5DB1F /* Coordinator.swift in Sources */,
+				AA6F321A29A84F2200AA4925 /* BlueCapsuleButtonStyle.swift in Sources */,
 				AA9154A829A7AA6000A5DB1F /* OpenseaRepository.swift in Sources */,
 				AA9154A029A7A85E00A5DB1F /* Asset.swift in Sources */,
 				AA9154B729A7B10B00A5DB1F /* Presenter.swift in Sources */,
+				AA9154D129A7C0E200A5DB1F /* AssetCollectionCell.swift in Sources */,
 				AA9154BF29A7B38D00A5DB1F /* AssetCollectionViewModel.swift in Sources */,
+				AA9154D329A7C10E00A5DB1F /* AssetCollectionCellModel.swift in Sources */,
 				AA9154AA29A7AA7000A5DB1F /* AssetLoadable.swift in Sources */,
 				AA91547629A7A5F200A5DB1F /* SceneDelegate.swift in Sources */,
 			);
@@ -398,7 +454,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -452,7 +508,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -475,7 +531,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -502,7 +558,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -540,11 +596,19 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AA6F321529A84D7C00AA4925 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.9.0;
+			};
+		};
 		AA91549229A7A77D00A5DB1F /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
 			requirement = {
-				kind = upToNextMajorVersion;
+				kind = upToNextMinorVersion;
 				minimumVersion = 6.5.0;
 			};
 		};
@@ -554,14 +618,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 4.1.0;
-			};
-		};
-		AA91549C29A7A7C900A5DB1F /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 5.9.0;
 			};
 		};
 		AA9154C029A7BF2500A5DB1F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
@@ -575,6 +631,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AA6F321629A84D7C00AA4925 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA6F321529A84D7C00AA4925 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
 		AA91549329A7A77D00A5DB1F /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AA91549229A7A77D00A5DB1F /* XCRemoteSwiftPackageReference "RxSwift" */;
@@ -594,11 +655,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AA91549929A7A79C00A5DB1F /* XCRemoteSwiftPackageReference "ObjectMapper" */;
 			productName = ObjectMapper;
-		};
-		AA91549D29A7A7C900A5DB1F /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AA91549C29A7A7C900A5DB1F /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
 		};
 		AA9154C129A7BF2500A5DB1F /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
