@@ -12,6 +12,8 @@
 		AA6F321029A849A500AA4925 /* AssetDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F320F29A849A500AA4925 /* AssetDetailViewModel.swift */; };
 		AA6F321729A84D7C00AA4925 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = AA6F321629A84D7C00AA4925 /* SDWebImage */; };
 		AA6F321A29A84F2200AA4925 /* BlueCapsuleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F321929A84F2200AA4925 /* BlueCapsuleButtonStyle.swift */; };
+		AA6F321C29A86DE100AA4925 /* InfuraRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F321B29A86DE100AA4925 /* InfuraRepository.swift */; };
+		AA6F321E29A86E1A00AA4925 /* EthererumLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F321D29A86E1A00AA4925 /* EthererumLoadable.swift */; };
 		AA91547429A7A5F200A5DB1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA91547329A7A5F200A5DB1F /* AppDelegate.swift */; };
 		AA91547629A7A5F200A5DB1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA91547529A7A5F200A5DB1F /* SceneDelegate.swift */; };
 		AA91547829A7A5F200A5DB1F /* AssetCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA91547729A7A5F200A5DB1F /* AssetCollectionViewController.swift */; };
@@ -45,6 +47,8 @@
 		AA6F320D29A8498900AA4925 /* AssetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailView.swift; sourceTree = "<group>"; };
 		AA6F320F29A849A500AA4925 /* AssetDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailViewModel.swift; sourceTree = "<group>"; };
 		AA6F321929A84F2200AA4925 /* BlueCapsuleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueCapsuleButtonStyle.swift; sourceTree = "<group>"; };
+		AA6F321B29A86DE100AA4925 /* InfuraRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfuraRepository.swift; sourceTree = "<group>"; };
+		AA6F321D29A86E1A00AA4925 /* EthererumLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthererumLoadable.swift; sourceTree = "<group>"; };
 		AA91547029A7A5F200A5DB1F /* NFTCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NFTCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA91547329A7A5F200A5DB1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA91547529A7A5F200A5DB1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -202,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				AA9154A729A7AA6000A5DB1F /* OpenseaRepository.swift */,
+				AA6F321B29A86DE100AA4925 /* InfuraRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -239,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				AA9154A929A7AA7000A5DB1F /* AssetLoadable.swift */,
+				AA6F321D29A86E1A00AA4925 /* EthererumLoadable.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -386,6 +392,8 @@
 				AA9154BF29A7B38D00A5DB1F /* AssetCollectionViewModel.swift in Sources */,
 				AA9154D329A7C10E00A5DB1F /* AssetCollectionCellModel.swift in Sources */,
 				AA9154AA29A7AA7000A5DB1F /* AssetLoadable.swift in Sources */,
+				AA6F321C29A86DE100AA4925 /* InfuraRepository.swift in Sources */,
+				AA6F321E29A86E1A00AA4925 /* EthererumLoadable.swift in Sources */,
 				AA91547629A7A5F200A5DB1F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
