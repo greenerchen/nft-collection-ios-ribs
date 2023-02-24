@@ -19,7 +19,7 @@ class OpenseaRepository {
     
     var wallet: Wallet
     
-    init(httpClient: RxSwiftHTTPClient = MockHTTPClient(), wallet: Wallet) {
+    init(httpClient: RxSwiftHTTPClient = RxHTTPClient(), wallet: Wallet) {
         self.httpClient = httpClient
         self.wallet = wallet
     }

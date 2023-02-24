@@ -47,14 +47,18 @@ extension AssetCollectionCoordinator: AssetCollectionRouting {
 extension AssetCollectionCoordinator: AssetCollectionBuildable {
     static func build(withListener listener: AssetCollectionListenable?) -> AssetCollectionCoordinator {
         let viewModel = AssetCollectionViewModel()
-        let viewController = AssetCollectionViewController()
+        let viewController = AssetCollectionViewController(viewModel: viewModel, listener: viewModel)
         let navigationController = UINavigationController(rootViewController: viewController)
-        let presenter = AssetCollectionPresenter(viewController: navigationController)
-        return AssetCollectionCoordinator(
+        let presenter = AssetCollectionPresenter(viewController: navigationController, navigationController: navigationController)
+        let coordinator = AssetCollectionCoordinator(
             presenter: presenter,
             listener: listener,
             viewModel: viewModel
         )
+        viewModel.router = coordinator
+        return coordinator
+    }
+}
     }
 }
 

@@ -51,5 +51,14 @@ class AssetCollectionViewModel: Interactor, AssetCollectionInteractable {
             }
             .disposed(by: bag)
     }
+}
+
+// MARK: - AssetCollectionPresentableListener Impl
+
+extension AssetCollectionViewModel: AssetCollectionPresentableListener {
+    func getAssets() -> Observable<[Asset]> {
+        assetRepository.loadAssets()
+            .map { $0.assets }
+    }
     
 }
