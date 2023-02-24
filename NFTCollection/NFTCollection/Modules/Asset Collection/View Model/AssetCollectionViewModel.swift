@@ -38,7 +38,7 @@ class AssetCollectionViewModel: Interactor, AssetCollectionInteractable {
     var presenter: AssetCollectionPresentable?
     
     lazy var wallet: Wallet = Wallet(etherAddress: "0x19818f44faf5a217f619aff0fd487cb2a55cca65", balance: 0.0)
-    lazy var assetRepository: AssetsLoadable = OpenseaRepository(httpClient: MockHTTPClient(), wallet: wallet)
+    lazy var assetRepository: AssetsLoadable = OpenseaRepository(httpClient: RxHTTPClient(), wallet: wallet)
     lazy var ethRepository: EthererumLoadable = InfuraRepository(httpClient: RxHTTPClient(), wallet: wallet)
     
     private let bag = DisposeBag()

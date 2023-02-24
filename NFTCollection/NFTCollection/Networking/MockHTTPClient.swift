@@ -13,6 +13,9 @@ class MockHTTPClient: RxSwiftHTTPClient {
         Observable.just(assetsResponse.data(using: .utf8)!)
     }
     
+    func get(_ url: URL, headers: [String : String]?) -> RxSwift.Observable<Data> {
+        Observable.just(assetsResponse.data(using: .utf8)!)
+    }
     
     func post(_ url: URL, body: Data) -> Observable<Data> {
         Observable.just(balanceResponse.data(using: .utf8)!)
