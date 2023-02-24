@@ -19,6 +19,7 @@ class AssetCollectionViewModel: Interactor, AssetCollectionInteractable {
     // MARK: Combine publishers
     
     var assets = BehaviorSubject<[Asset]>(value: [])
+    lazy var ethBalance = BehaviorSubject<Double>(value: wallet.balance)
     
     init(
         router: AssetCollectionRouting? = nil,
@@ -38,6 +39,7 @@ class AssetCollectionViewModel: Interactor, AssetCollectionInteractable {
     
     lazy var wallet: Wallet = Wallet(etherAddress: "0x19818f44faf5a217f619aff0fd487cb2a55cca65", balance: 0.0)
     lazy var assetRepository: AssetsLoadable = OpenseaRepository(httpClient: MockHTTPClient(), wallet: wallet)
+    lazy var ethRepository: EthererumLoadable = InfuraRepository(httpClient: RxHTTPClient(), wallet: wallet)
     
     private let bag = DisposeBag()
     
@@ -63,5 +65,14 @@ extension AssetCollectionViewModel: AssetCollectionPresentableListener {
     
     func didSelectItem(asset: Asset) {
         router?.attachAssetDetail(withAsset: asset, transitionStyle: .pop)
+    }
+    
+    func getEthBalance() -> Observable<Double> {
+        ethRepository.getEthBalance()
+            .flatMap { [weak self] balance in
+                self?.wallet.balance = balance
+                self?.ethBalance.onNext(balance)
+                return Observable.just(balance)
+            }
     }
 }

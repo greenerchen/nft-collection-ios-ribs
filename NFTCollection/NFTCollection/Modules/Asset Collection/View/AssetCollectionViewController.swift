@@ -12,6 +12,7 @@ import RxCocoa
 protocol AssetCollectionPresentableListener: Listenable {
     func getAssets() -> Observable<[Asset]>
     func didSelectItem(asset: Asset)
+    func getEthBalance() -> Observable<Double>
 }
 
 class AssetCollectionViewController: UICollectionViewController {
@@ -38,6 +39,7 @@ class AssetCollectionViewController: UICollectionViewController {
         setupNavigationTitle()
         setupCollectionView()
         
+        subscribeEthBalance()
         subscribeAssets()
         subscribeCellSelected()
         subscribeWillDisplayCell()
@@ -59,6 +61,15 @@ class AssetCollectionViewController: UICollectionViewController {
         // set delegate/dataSource to nil for the collectionView's RxCocoa subscriptions
         collectionView.delegate = nil
         collectionView.dataSource = nil
+    }
+    
+    private func subscribeEthBalance() {
+        listener?.getEthBalance()
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] balance in
+                self?.title = "\(balance) ETH"
+            })
+            .disposed(by: bag)
     }
     
     private func subscribeAssets() {
