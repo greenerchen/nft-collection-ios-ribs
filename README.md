@@ -3,8 +3,18 @@ This project is to fetch the collections on an ethereum address using [OpenSea A
 
 # Features
 - [ ] Fetch NFT assets from OpenSea API https://api.opensea.io/api
-- [ ] Display a collection list page
-- [ ] Display the specific item detail page
+- [x] Display a collection page using UIKit and RxSwift
+- [x] Display the specific asset detail page using SwiftUI
+- [x] Display the fetched ETH balance on the title of the collection list page
+
+# Use Cases
+- [x] Display a collection page and scroll down to load more content
+
+https://user-images.githubusercontent.com/1248888/221095418-6a4c2ba9-2a25-44ec-b26d-8e368041d27d.mp4
+
+- [x] Tap an asset item in the collection page to navigate to the specific asset detail page and open the marketplace link
+
+https://user-images.githubusercontent.com/1248888/221095449-868b75f8-9c81-422c-b22d-96ba3ec87966.mp4
 
 # Flowchart
 ![Flowchart](NFTCollectionFlowchart.png)
@@ -50,10 +60,11 @@ cursor (string): A cursor pointing to the page to retrieve
 | permanentlink | String |
 
 # App Architecture
+This projecct adopts the MVVM-C pattern for presentation and navigation and the repository pattern for fetching remote data.
+
 ![Architecture](NFTCollectionArchitecture.png)
 
 # State Management
-Coordinators manage app states (models) in the coordinator tree.
-![State Management](NFTCollectionStateManagement.png)
+Coordinators manage app states (models) in a tree.
 
-# Screenshots
+![State Management](NFTCollectionStateManagement.png)
