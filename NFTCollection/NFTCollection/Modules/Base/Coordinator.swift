@@ -22,6 +22,8 @@ protocol Coordinatable: Routing {
     var listener: Listenable? { get set }
     /// The interactor of this `Coordinator`
     var interactor: Interactable? { get set }
+    /// The view controller of the top most child
+    var topMostViewController: UIViewController? { get }
     
     /// Attaches the given coordinator as a child
     func attachChild(_ child: Coordinatable)
