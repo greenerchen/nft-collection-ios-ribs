@@ -24,11 +24,15 @@ protocol Coordinatable: Routing {
     var interactor: Interactable? { get set }
     /// The view controller of the top most child
     var topMostViewController: UIViewController? { get }
+    /// The parent coordinator
+    var superCorrdinator: Coordinatable? { get set }
     
     /// Attaches the given coordinator as a child
     func attachChild(_ child: Coordinatable)
     /// Dettaches the given coordinator from the tree
-    func dettachChild(_ child: Coordinatable)
+    func detachChild(_ child: Coordinatable)
+    /// Detach itself from the parent coordinator
+    func detachFromSuperCoordinator()
 }
 
 /// The base for all coordinators
@@ -52,6 +56,9 @@ class Coordinator: Coordinatable {
         children.last?.presenter?.viewController
     }
     
+    /// The parent coordinator
+    var superCorrdinator: Coordinatable?
+    
     init(children: [Coordinator] = [], presenter: Presentable? = nil, listener: Listenable? = nil, interactor: Interactable? = nil) {
         self.children = children
         self.presenter = presenter
@@ -65,10 +72,13 @@ class Coordinator: Coordinatable {
         children.append(child)
     }
     
-    func dettachChild(_ child: Coordinatable) {
+    func detachChild(_ child: Coordinatable) {
         children.removeAll(where: { $0 === child })
     }
     
+    func detachFromSuperCoordinator() {
+        superCorrdinator?.detachChild(self)
+    }
     
     // MARK: RxSwift supported
     let bag = DisposeBag()
