@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-protocol AssetDetailListener {
+protocol AssetDetailPresentableListener {
     func didTapOpenMarketplace()
+    func didTapBack()
 }
 
 struct AssetDetailView: View {
@@ -26,7 +27,6 @@ struct AssetDetailView: View {
                 Text(viewModel.description)
                     .frame(maxWidth: 370)
             }
-            .navigationBarTitle(Text(viewModel.collectionName), displayMode: .inline)
             .toolbar {
                 ToolbarItem(placement: .bottomBar) {
                     Button("Open Marketplace") {
@@ -35,6 +35,13 @@ struct AssetDetailView: View {
                 }
             }
         }
+        .navigationBarTitle(Text(viewModel.collectionName), displayMode: .inline)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: Button(action : {
+            viewModel.didTapBack()
+        }){
+            Image(systemName: "arrow.left")
+        })
     }
 }
 

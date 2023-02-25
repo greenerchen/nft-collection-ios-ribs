@@ -39,11 +39,15 @@ class AssetDetailViewModel: Interactor, AssetDetailInteractable {
 
 // MARK: - AssetDetailListener Impl
 
-extension AssetDetailViewModel: AssetDetailListener {
+extension AssetDetailViewModel: AssetDetailPresentableListener {
     func didTapOpenMarketplace() {
         guard let url = URL(string: permanentLink) else {
             return
         }
         router?.routeToExternalWeb(url: url)
+    }
+    
+    func didTapBack() {
+        router?.routeBackToAssetCollection()
     }
 }

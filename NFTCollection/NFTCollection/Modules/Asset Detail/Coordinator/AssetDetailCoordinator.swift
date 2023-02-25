@@ -10,11 +10,20 @@ import SwiftUI
 
 protocol AssetDetailRoutable {
     func routeToExternalWeb(url: URL)
+    func routeBackToAssetCollection()
 }
 
-protocol AssetDetailPresentable {}
+protocol AssetDetailListener {}
 
-class AssetDetailPresenter: Presenter, AssetDetailPresentable {}
+protocol AssetDetailPresentable {
+    func popViewController()
+}
+
+class AssetDetailPresenter: Presenter, AssetDetailPresentable {
+    func popViewController() {
+        navigationController?.popViewController(animated: true)
+    }
+}
 
 protocol AssetDetailListenable: Listenable {
     func getNavigationController() -> UINavigationController?
@@ -36,6 +45,11 @@ class AssetDetailCoordinator: Coordinator {
 extension AssetDetailCoordinator: AssetDetailRoutable {
     func routeToExternalWeb(url: URL) {
         UIApplication.shared.open(url)
+    }
+    
+    func routeBackToAssetCollection() {
+        (presenter as? AssetDetailPresenter)?.popViewController()
+        detachFromSuperCoordinator()
     }
 }
 
