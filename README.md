@@ -13,13 +13,20 @@ This project is to fetch the collections on an ethereum address using [OpenSea A
 https://user-images.githubusercontent.com/1248888/221117540-7aba85f6-7649-4ac6-a33d-a671cb2583d2.mp4
 
 
+- [x] Tap an asset item in the collection page to push the specific asset detail page, and then tap the back button to pop back to asses collection page
 
-- [x] Tap an asset item in the collection page to navigate to the specific asset detail page and open the marketplace link
+https://user-images.githubusercontent.com/1248888/221384764-7d5d6caa-d467-4b92-aeb8-b94fa6927aba.mp4
 
-https://user-images.githubusercontent.com/1248888/221095449-868b75f8-9c81-422c-b22d-96ba3ec87966.mp4
+
+- [x] Scroll the asset detail page and tap the bottom button to open the marketplace link in an external browser 
+
+https://user-images.githubusercontent.com/1248888/221384761-ad9c6599-918c-4185-aa60-e2a9d6ef29b1.mp4
+
+
 
 # Flowchart
-![Flowchart](NFTCollectionFlowchart.png)
+![flowchart](https://user-images.githubusercontent.com/1248888/221384980-4da9fdf1-2949-45a8-98d8-546242dd6193.png)
+
 
 # Payload Contract
 ## OpenSea
