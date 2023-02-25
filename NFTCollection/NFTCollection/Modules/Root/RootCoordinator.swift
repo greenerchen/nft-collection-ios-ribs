@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol RootRouting: Routing {
+protocol RootRoutable: Routable {
     func attachAssetCollection()
 }
 
@@ -18,9 +18,9 @@ class RootCoordinator: Coordinator {
     }
 }
 
-// MARK: - RootRouting Impl
+// MARK: - RootRoutable Impl
 
-extension RootCoordinator: RootRouting {
+extension RootCoordinator: RootRoutable {
     func attachAssetCollection() {
         let coordinator: AssetCollectionCoordinator = AssetCollectionCoordinator.build(withListener: self)
         attachChild(coordinator)

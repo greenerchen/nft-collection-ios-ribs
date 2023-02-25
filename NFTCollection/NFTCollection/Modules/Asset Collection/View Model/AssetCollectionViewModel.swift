@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 protocol AssetCollectionInteractable: Interactable {
-    var router: AssetCollectionRouting? { get set }
+    var router: AssetCollectionRoutable? { get set }
     var listener: AssetCollectionListenable? { get set }
     var presenter: AssetCollectionPresentable? { get set }
 }
@@ -22,7 +22,7 @@ class AssetCollectionViewModel: Interactor, AssetCollectionInteractable {
     lazy var ethBalance = BehaviorSubject<Double>(value: wallet.balance)
     
     init(
-        router: AssetCollectionRouting? = nil,
+        router: AssetCollectionRoutable? = nil,
         listener: AssetCollectionListenable? = nil,
         presenter: AssetCollectionPresentable? = nil
     ) {
@@ -33,7 +33,7 @@ class AssetCollectionViewModel: Interactor, AssetCollectionInteractable {
     
     // MARK: AssetCollectionInteractable Impl
     
-    var router: AssetCollectionRouting?
+    var router: AssetCollectionRoutable?
     var listener: AssetCollectionListenable?
     var presenter: AssetCollectionPresentable?
     

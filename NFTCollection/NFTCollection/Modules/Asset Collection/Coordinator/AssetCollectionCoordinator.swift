@@ -9,7 +9,7 @@ import UIKit
 
 protocol AssetCollectionListenable: Listenable {}
 
-protocol AssetCollectionRouting {
+protocol AssetCollectionRoutable {
     func attachAssetDetail(withAsset asset: Asset, transitionStyle: NavigationTransitionStyle)
 }
 
@@ -34,9 +34,9 @@ class AssetCollectionCoordinator: Coordinator {
     }
 }
 
-// MARK: - AssetCollectionRouting Impl
+// MARK: - AssetCollectionRoutable Impl
 
-extension AssetCollectionCoordinator: AssetCollectionRouting {
+extension AssetCollectionCoordinator: AssetCollectionRoutable {
     func attachAssetDetail(withAsset asset: Asset, transitionStyle: NavigationTransitionStyle) {
         let coordinator = AssetDetailCoordinator.build(withListener: self, asset: asset)
         attachChild(coordinator)

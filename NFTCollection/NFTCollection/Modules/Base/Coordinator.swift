@@ -12,10 +12,10 @@ enum NavigationTransitionStyle {
     case pop
 }
 
-protocol Routing: AnyObject {}
+protocol Routable: AnyObject {}
 
 /// The protocol of `Coordinator`, which route the page navigation and manage tates within a tree
-protocol Coordinatable: Routing {
+protocol Coordinatable: Routable {
     /// The presenter of this `Coordinator`
     var presenter: Presentable? { get set }
     /// The listener of this `Coordinator`, which communicates with the parent coordinator
