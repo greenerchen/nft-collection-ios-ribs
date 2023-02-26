@@ -29,8 +29,8 @@ class AssetCollectionPresenter: Presenter, AssetCollectionPresentable {
 
 class AssetCollectionCoordinator: Coordinator {
     
-    init(presenter: AssetCollectionPresenter?, listener: AssetCollectionListenable? = nil, viewModel: AssetCollectionViewModel?) {
-        super.init(presenter: presenter, listener: listener, interactor: viewModel)
+    init(presenter: AssetCollectionPresenter?, listener: AssetCollectionListenable? = nil) {
+        super.init(presenter: presenter, listener: listener)
     }
 }
 
@@ -58,8 +58,7 @@ extension AssetCollectionCoordinator: AssetCollectionBuildable {
         let presenter = AssetCollectionPresenter(viewController: navigationController, navigationController: navigationController)
         let coordinator = AssetCollectionCoordinator(
             presenter: presenter,
-            listener: listener,
-            viewModel: viewModel
+            listener: listener
         )
         viewModel.router = coordinator
         return coordinator

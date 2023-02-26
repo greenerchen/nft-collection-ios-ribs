@@ -36,7 +36,7 @@ protocol AssetDetailBuildable {
 class AssetDetailCoordinator: Coordinator {
     
     init(presenter: AssetDetailPresenter?, listener: AssetDetailListenable?, viewModel: AssetDetailViewModel?) {
-        super.init(presenter: presenter, listener: listener, interactor: viewModel)
+        super.init(presenter: presenter, listener: listener)
     }
 }
 

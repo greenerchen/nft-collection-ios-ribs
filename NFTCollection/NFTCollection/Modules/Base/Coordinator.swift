@@ -20,8 +20,6 @@ protocol Coordinatable: Routable {
     var presenter: Presentable? { get set }
     /// The listener of this `Coordinator`, which communicates with the parent coordinator
     var listener: Listenable? { get set }
-    /// The interactor of this `Coordinator`
-    var interactor: Interactable? { get set }
     /// The view controller of the top most child
     var topMostViewController: UIViewController? { get }
     /// The parent coordinator
@@ -50,9 +48,6 @@ class Coordinator: Coordinatable {
     /// The listener of this `Coordinator`, which communicates with the parent coordinator
     var listener: Listenable?
     
-    /// The interactor of this `Coordinator`
-    var interactor: Interactable?
-    
     /// The view controller of the top most child
     var topMostViewController: UIViewController? {
         topMostChild().presenter?.viewController
@@ -61,11 +56,10 @@ class Coordinator: Coordinatable {
     /// The parent coordinator
     var superCoordinator: Coordinatable?
     
-    init(children: [Coordinator] = [], presenter: Presentable? = nil, listener: Listenable? = nil, interactor: Interactable? = nil) {
+    init(children: [Coordinator] = [], presenter: Presentable? = nil, listener: Listenable? = nil) {
         self.children = children
         self.presenter = presenter
         self.listener = listener
-        self.interactor = interactor
     }
     
     func attachChild(_ child: Coordinatable) {
