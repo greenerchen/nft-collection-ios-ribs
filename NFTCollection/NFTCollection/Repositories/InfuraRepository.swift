@@ -46,14 +46,7 @@ extension InfuraRepository: EthererumLoadable {
     }
 }
 
-protocol RPCJSONRequest {
-    var jsonrpc: String { get set }
-    var method: String { get set }
-    var params: [String] { get set }
-    var id: Int { get set }
-}
-
-struct EthGetBalanceParams: Codable, RPCJSONRequest {
+struct EthGetBalanceParams: Codable {
     var jsonrpc: String
     var method: String
     var params: [String]
