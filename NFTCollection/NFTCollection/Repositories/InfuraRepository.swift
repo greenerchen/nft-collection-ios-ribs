@@ -9,11 +9,11 @@ import Foundation
 import RxSwift
 import ObjectMapper
 
-fileprivate let INFURA_API_KEY = ""
 
 class InfuraRepository {
     private let httpClient: RxSwiftHTTPClient
-    private let endpoint = "https://mainnet.infura.io/v3/\(INFURA_API_KEY)"
+    private let INFURA_API_KEY = ProcessInfo.processInfo.environment["INFURA_API_KEY"]
+    private lazy var endpoint = "https://mainnet.infura.io/v3/\(INFURA_API_KEY ?? "")"
     
     // MARK: AssetsLoadable Impl
     var wallet: Wallet
