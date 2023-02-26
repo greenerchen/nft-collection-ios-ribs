@@ -10,37 +10,26 @@ import RxSwift
 
 protocol AssetCollectionInteractable: Interactable {
     var router: AssetCollectionRoutable? { get set }
-    var listener: AssetCollectionListenable? { get set }
-    var presenter: AssetCollectionPresentable? { get set }
 }
 
 class AssetCollectionViewModel: Interactor, AssetCollectionInteractable {
     
-    // MARK: Combine publishers
+    // MARK: RxSwift Subjects
     
     var assets = BehaviorSubject<[Asset]>(value: [])
     lazy var ethBalance = BehaviorSubject<Double>(value: wallet.balance)
     
-    init(
-        router: AssetCollectionRoutable? = nil,
-        listener: AssetCollectionListenable? = nil,
-        presenter: AssetCollectionPresentable? = nil
-    ) {
-        self.router = router
-        self.listener = listener
-        self.presenter = presenter
-    }
-    
     // MARK: AssetCollectionInteractable Impl
-    
     var router: AssetCollectionRoutable?
-    var listener: AssetCollectionListenable?
-    var presenter: AssetCollectionPresentable?
     
     lazy var wallet: Wallet = Wallet(etherAddress: "0x19818f44faf5a217f619aff0fd487cb2a55cca65", balance: 0.0)
     lazy var assetRepository: AssetsLoadable = OpenseaRepository(httpClient: RxHTTPClient(), wallet: wallet)
     lazy var ethRepository: EthererumLoadable = InfuraRepository(httpClient: RxHTTPClient(), wallet: wallet)
     
+    init(router: AssetCollectionRoutable? = nil) {
+        self.router = router
+    }
+
     private let bag = DisposeBag()
     
     func getAssets() {

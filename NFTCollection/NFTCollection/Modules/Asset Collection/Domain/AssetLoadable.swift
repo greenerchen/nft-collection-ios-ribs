@@ -14,6 +14,5 @@ struct AssetsResult {
 }
 
 protocol AssetsLoadable {
-    var wallet: Wallet { get set }
     func loadAssets() -> Observable<AssetsResult>
 }
