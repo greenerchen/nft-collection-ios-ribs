@@ -25,7 +25,7 @@ protocol Coordinatable: Routable {
     /// The view controller of the top most child
     var topMostViewController: UIViewController? { get }
     /// The parent coordinator
-    var superCorrdinator: Coordinatable? { get set }
+    var superCoordinator: Coordinatable? { get set }
     
     /// Attaches the given coordinator as a child
     func attachChild(_ child: Coordinatable)
@@ -59,7 +59,7 @@ class Coordinator: Coordinatable {
     }
     
     /// The parent coordinator
-    var superCorrdinator: Coordinatable?
+    var superCoordinator: Coordinatable?
     
     init(children: [Coordinator] = [], presenter: Presentable? = nil, listener: Listenable? = nil, interactor: Interactable? = nil) {
         self.children = children
@@ -71,7 +71,7 @@ class Coordinator: Coordinatable {
     func attachChild(_ child: Coordinatable) {
         assert(!children.contains(where: { $0 === child }), "Attempt to attach a child \(child), which is already attached to \(self).")
         
-        child.superCorrdinator = self
+        child.superCoordinator = self
         children.append(child)
     }
     
@@ -80,7 +80,7 @@ class Coordinator: Coordinatable {
     }
     
     func detachFromSuperCoordinator() {
-        superCorrdinator?.detachChild(self)
+        superCoordinator?.detachChild(self)
     }
     
     func topMostChild() -> Coordinatable {
