@@ -14,6 +14,10 @@
 		AA6F321A29A84F2200AA4925 /* BlueCapsuleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F321929A84F2200AA4925 /* BlueCapsuleButtonStyle.swift */; };
 		AA6F321C29A86DE100AA4925 /* InfuraRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F321B29A86DE100AA4925 /* InfuraRepository.swift */; };
 		AA6F321E29A86E1A00AA4925 /* EthererumLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F321D29A86E1A00AA4925 /* EthererumLoadable.swift */; };
+		AA6F322829ABA15E00AA4925 /* MVVMCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F322729ABA15E00AA4925 /* MVVMCTests.swift */; };
+		AA6F323029ABA2DD00AA4925 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = AA6F322F29ABA2DD00AA4925 /* RxCocoa */; };
+		AA6F323229ABA2E300AA4925 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AA6F323129ABA2E300AA4925 /* RxSwift */; };
+		AA6F323429ABA2F300AA4925 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = AA6F323329ABA2F300AA4925 /* SDWebImage */; };
 		AA91547429A7A5F200A5DB1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA91547329A7A5F200A5DB1F /* AppDelegate.swift */; };
 		AA91547629A7A5F200A5DB1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA91547529A7A5F200A5DB1F /* SceneDelegate.swift */; };
 		AA91547829A7A5F200A5DB1F /* AssetCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA91547729A7A5F200A5DB1F /* AssetCollectionViewController.swift */; };
@@ -42,6 +46,16 @@
 		AA9154D329A7C10E00A5DB1F /* AssetCollectionCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154D229A7C10E00A5DB1F /* AssetCollectionCellModel.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		AA6F322929ABA15E00AA4925 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA91546829A7A5F200A5DB1F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA91546F29A7A5F200A5DB1F;
+			remoteInfo = NFTCollection;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		AA6F320B29A8492300AA4925 /* AssetDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailCoordinator.swift; sourceTree = "<group>"; };
 		AA6F320D29A8498900AA4925 /* AssetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailView.swift; sourceTree = "<group>"; };
@@ -49,6 +63,8 @@
 		AA6F321929A84F2200AA4925 /* BlueCapsuleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueCapsuleButtonStyle.swift; sourceTree = "<group>"; };
 		AA6F321B29A86DE100AA4925 /* InfuraRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfuraRepository.swift; sourceTree = "<group>"; };
 		AA6F321D29A86E1A00AA4925 /* EthererumLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthererumLoadable.swift; sourceTree = "<group>"; };
+		AA6F322529ABA15E00AA4925 /* NFTCollectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NFTCollectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA6F322729ABA15E00AA4925 /* MVVMCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMCTests.swift; sourceTree = "<group>"; };
 		AA91547029A7A5F200A5DB1F /* NFTCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NFTCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA91547329A7A5F200A5DB1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA91547529A7A5F200A5DB1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +91,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AA6F322229ABA15E00AA4925 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA6F323429ABA2F300AA4925 /* SDWebImage in Frameworks */,
+				AA6F323229ABA2E300AA4925 /* RxSwift in Frameworks */,
+				AA6F323029ABA2DD00AA4925 /* RxCocoa in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AA91546D29A7A5F200A5DB1F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -123,11 +149,28 @@
 			path = "UI Elements";
 			sourceTree = "<group>";
 		};
+		AA6F322629ABA15E00AA4925 /* NFTCollectionTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA6F322729ABA15E00AA4925 /* MVVMCTests.swift */,
+			);
+			path = NFTCollectionTests;
+			sourceTree = "<group>";
+		};
+		AA6F322E29ABA2DD00AA4925 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AA91546729A7A5F200A5DB1F = {
 			isa = PBXGroup;
 			children = (
 				AA91547229A7A5F200A5DB1F /* NFTCollection */,
+				AA6F322629ABA15E00AA4925 /* NFTCollectionTests */,
 				AA91547129A7A5F200A5DB1F /* Products */,
+				AA6F322E29ABA2DD00AA4925 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				AA91547029A7A5F200A5DB1F /* NFTCollection.app */,
+				AA6F322529ABA15E00AA4925 /* NFTCollectionTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -289,6 +333,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AA6F322429ABA15E00AA4925 /* NFTCollectionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA6F322D29ABA15E00AA4925 /* Build configuration list for PBXNativeTarget "NFTCollectionTests" */;
+			buildPhases = (
+				AA6F322129ABA15E00AA4925 /* Sources */,
+				AA6F322229ABA15E00AA4925 /* Frameworks */,
+				AA6F322329ABA15E00AA4925 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA6F322A29ABA15E00AA4925 /* PBXTargetDependency */,
+			);
+			name = NFTCollectionTests;
+			packageProductDependencies = (
+				AA6F322F29ABA2DD00AA4925 /* RxCocoa */,
+				AA6F323129ABA2E300AA4925 /* RxSwift */,
+				AA6F323329ABA2F300AA4925 /* SDWebImage */,
+			);
+			productName = NFTCollectionTests;
+			productReference = AA6F322529ABA15E00AA4925 /* NFTCollectionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		AA91546F29A7A5F200A5DB1F /* NFTCollection */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA91548429A7A5F400A5DB1F /* Build configuration list for PBXNativeTarget "NFTCollection" */;
@@ -324,6 +391,10 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					AA6F322429ABA15E00AA4925 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = AA91546F29A7A5F200A5DB1F;
+					};
 					AA91546F29A7A5F200A5DB1F = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -349,11 +420,19 @@
 			projectRoot = "";
 			targets = (
 				AA91546F29A7A5F200A5DB1F /* NFTCollection */,
+				AA6F322429ABA15E00AA4925 /* NFTCollectionTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AA6F322329ABA15E00AA4925 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AA91546E29A7A5F200A5DB1F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -366,6 +445,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AA6F322129ABA15E00AA4925 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA6F322829ABA15E00AA4925 /* MVVMCTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AA91546C29A7A5F200A5DB1F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -400,6 +487,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		AA6F322A29ABA15E00AA4925 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA91546F29A7A5F200A5DB1F /* NFTCollection */;
+			targetProxy = AA6F322929ABA15E00AA4925 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		AA91547E29A7A5F400A5DB1F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -412,6 +507,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		AA6F322B29ABA15E00AA4925 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.greenerchen.NFTCollectionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NFTCollection.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NFTCollection";
+			};
+			name = Debug;
+		};
+		AA6F322C29ABA15E00AA4925 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.greenerchen.NFTCollectionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NFTCollection.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NFTCollection";
+			};
+			name = Release;
+		};
 		AA91548229A7A5F400A5DB1F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -583,6 +714,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AA6F322D29ABA15E00AA4925 /* Build configuration list for PBXNativeTarget "NFTCollectionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA6F322B29ABA15E00AA4925 /* Debug */,
+				AA6F322C29ABA15E00AA4925 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AA91546B29A7A5F200A5DB1F /* Build configuration list for PBXProject "NFTCollection" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -640,6 +780,21 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		AA6F321629A84D7C00AA4925 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA6F321529A84D7C00AA4925 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		AA6F322F29ABA2DD00AA4925 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA91549229A7A77D00A5DB1F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		AA6F323129ABA2E300AA4925 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA91549229A7A77D00A5DB1F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		AA6F323329ABA2F300AA4925 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AA6F321529A84D7C00AA4925 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;

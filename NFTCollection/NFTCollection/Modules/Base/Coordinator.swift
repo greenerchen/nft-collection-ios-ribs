@@ -46,7 +46,7 @@ class Coordinator: Coordinatable {
     var presenter: Presentable?
     
     /// The listener of this `Coordinator`, which communicates with the parent coordinator
-    var listener: Listenable?
+    weak var listener: Listenable?
     
     /// The view controller of the top most child
     var topMostViewController: UIViewController? {
@@ -54,7 +54,7 @@ class Coordinator: Coordinatable {
     }
     
     /// The parent coordinator
-    var superCoordinator: Coordinatable?
+    weak var superCoordinator: Coordinatable?
     
     init(children: [Coordinator] = [], presenter: Presentable? = nil, listener: Listenable? = nil) {
         self.children = children
