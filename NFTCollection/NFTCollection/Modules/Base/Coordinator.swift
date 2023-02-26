@@ -33,6 +33,8 @@ protocol Coordinatable: Routable {
     func detachChild(_ child: Coordinatable)
     /// Detach itself from the parent coordinator
     func detachFromSuperCoordinator()
+    /// Get the top most child coordinator
+    func topMostChild() -> Coordinatable
 }
 
 /// The base for all coordinators
@@ -53,7 +55,7 @@ class Coordinator: Coordinatable {
     
     /// The view controller of the top most child
     var topMostViewController: UIViewController? {
-        children.last?.presenter?.viewController
+        topMostChild().presenter?.viewController
     }
     
     /// The parent coordinator
@@ -79,6 +81,13 @@ class Coordinator: Coordinatable {
     
     func detachFromSuperCoordinator() {
         superCorrdinator?.detachChild(self)
+    }
+    
+    func topMostChild() -> Coordinatable {
+        guard let lastChild = children.last else {
+            return self
+        }
+        return lastChild.topMostChild()
     }
     
     // MARK: RxSwift supported
