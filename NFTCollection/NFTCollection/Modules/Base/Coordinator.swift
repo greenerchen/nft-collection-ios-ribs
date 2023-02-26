@@ -69,6 +69,7 @@ class Coordinator: Coordinatable {
     func attachChild(_ child: Coordinatable) {
         assert(!children.contains(where: { $0 === child }), "Attempt to attach a child \(child), which is already attached to \(self).")
         
+        child.superCorrdinator = self
         children.append(child)
     }
     
