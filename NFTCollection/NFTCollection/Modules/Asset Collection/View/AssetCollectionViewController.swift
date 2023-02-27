@@ -22,15 +22,13 @@ class AssetCollectionViewController: UICollectionViewController {
     }
     
     var viewModel: AssetCollectionViewModel?
-    var listener: AssetCollectionPresentableListener?
     
     private var assets = BehaviorSubject<[Asset]>(value: [])
     private let bag = DisposeBag()
     
-    convenience init(viewModel: AssetCollectionViewModel? = nil, listener: AssetCollectionPresentableListener? = nil) {
+    convenience init(viewModel: AssetCollectionViewModel? = nil) {
         self.init(collectionViewLayout: UICollectionViewLayout())
         self.viewModel = viewModel
-        self.listener = listener
     }
     
     override func viewDidLoad() {
@@ -64,7 +62,7 @@ class AssetCollectionViewController: UICollectionViewController {
     }
     
     private func subscribeEthBalance() {
-        listener?.getEthBalance()
+        viewModel?.getEthBalance()
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] balance in
                 self?.title = "\(balance) ETH"
@@ -87,7 +85,7 @@ class AssetCollectionViewController: UICollectionViewController {
                 guard let self = self else { return }
                 do {
                     let asset = try self.assets.value()[indexPath.item]
-                    self.listener?.didSelectItem(asset: asset)
+                    self.viewModel?.didSelectItem(asset: asset)
                 } catch {
                     debugPrint(error)
                 }
@@ -112,7 +110,7 @@ class AssetCollectionViewController: UICollectionViewController {
     }
     
     private func fetchAssets() {
-        listener?.getAssets()
+        viewModel?.getAssets()
             .subscribe { [weak self] assets in
                 guard let self = self else { return }
                 guard let currentAssets = try? self.assets.value() + assets else {

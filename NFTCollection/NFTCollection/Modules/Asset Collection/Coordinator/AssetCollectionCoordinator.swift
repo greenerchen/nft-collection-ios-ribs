@@ -35,7 +35,7 @@ extension AssetCollectionCoordinator: AssetCollectionRoutable {}
 extension AssetCollectionCoordinator: AssetCollectionBuildable {
     static func build(withListener listener: AssetCollectionListenable?) -> AssetCollectionCoordinator {
         let viewModel = AssetCollectionViewModel(listener: listener)
-        let viewController = AssetCollectionViewController(viewModel: viewModel, listener: viewModel)
+        let viewController = AssetCollectionViewController(viewModel: viewModel)
         let presenter = AssetCollectionPresenter(viewController: viewController)
         let coordinator = AssetCollectionCoordinator(
             presenter: presenter,
