@@ -11,6 +11,8 @@ import UIKit
 protocol Presentable: AnyObject {
     var viewController: UIViewController? { get set }
     
+    /// Present the given view controller with the specific transition style
+    func present(viewController: UIViewController, transitionStyle: NavigationTransitionStyle)
     /// Push the view controller with the animated option
     func pushViewController(_ viewController: UIViewController, animated: Bool)
     /// Push the view controller with animation
@@ -24,6 +26,15 @@ class Presenter: Presentable {
     
     init(viewController: UIViewController? = nil) {
         self.viewController = viewController
+    }
+    
+    func present(viewController: UIViewController, transitionStyle: NavigationTransitionStyle) {
+        switch transitionStyle {
+        case .push:
+            pushViewController(viewController, animated: true)
+        case .pop:
+            popViewController()
+        }
     }
     
     func pushViewController(_ viewController: UIViewController, animated: Bool) {

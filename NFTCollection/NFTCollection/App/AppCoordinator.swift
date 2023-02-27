@@ -49,20 +49,13 @@ extension AppCoordinator: AppRoutable {
         let coordinator = AssetDetailCoordinator.build(withListener: self, asset: asset)
         attachChild(coordinator)
         guard let viewController = coordinator.presenter?.viewController else { return }
-        switch transitionStyle {
-        case .push:
-            (presenter as? AppPresenter)?.pushViewController(viewController)
-        default: break
-        }
+        presenter?.present(viewController: viewController, transitionStyle: transitionStyle)
     }
     
     func detachAssetDetail(transitionStyle: NavigationTransitionStyle) {
-        guard let coordinator = children.last as? AssetDetailCoordinator else { return }
-        switch transitionStyle {
-        case .pop:
-            presenter?.popViewController()
-        default: break
-        }
+        guard let coordinator = children.last as? AssetDetailCoordinator,
+              let viewController = coordinator.presenter?.viewController else { return }
+        presenter?.present(viewController: viewController, transitionStyle: transitionStyle)
         detachChild(coordinator)
     }
 }
