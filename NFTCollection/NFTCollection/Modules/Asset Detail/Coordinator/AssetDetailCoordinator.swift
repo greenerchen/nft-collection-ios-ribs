@@ -17,7 +17,9 @@ protocol AssetDetailListener {}
 
 class AssetDetailPresenter: Presenter {}
 
-protocol AssetDetailListenable: Listenable {}
+protocol AssetDetailListenable: Listenable {
+    func routeFromAssetDetailToAssetCollection()
+}
 
 protocol AssetDetailBuildable {
     static func build(withListener listener: AssetDetailListenable?, asset: Asset) -> AssetDetailCoordinator
@@ -38,8 +40,7 @@ extension AssetDetailCoordinator: AssetDetailRoutable {
     }
     
     func routeBackToAssetCollection() {
-        (presenter as? AssetDetailPresenter)?.popViewController()
-        detachFromSuperCoordinator()
+        (listener as? AssetDetailListenable)?.routeFromAssetDetailToAssetCollection()
     }
 }
 

@@ -10,6 +10,7 @@ import UIKit
 protocol AppRoutable: Routable {
     func attachAssetCollection()
     func attachAssetDetail(withAsset asset: Asset, transitionStyle: NavigationTransitionStyle)
+    func detachAssetDetail(transitionStyle: NavigationTransitionStyle)
 }
 
 protocol AppPresentable {
@@ -51,9 +52,18 @@ extension AppCoordinator: AppRoutable {
         switch transitionStyle {
         case .push:
             (presenter as? AppPresenter)?.pushViewController(viewController)
-        default:
-            break
+        default: break
         }
+    }
+    
+    func detachAssetDetail(transitionStyle: NavigationTransitionStyle) {
+        guard let coordinator = children.last as? AssetDetailCoordinator else { return }
+        switch transitionStyle {
+        case .pop:
+            presenter?.popViewController()
+        default: break
+        }
+        detachChild(coordinator)
     }
 }
 
@@ -68,5 +78,7 @@ extension AppCoordinator: AssetCollectionListenable {
 // MARK: - AssetDetailListenable Impl
 
 extension AppCoordinator: AssetDetailListenable {
-    
+    func routeFromAssetDetailToAssetCollection() {
+        detachAssetDetail(transitionStyle: .pop)
+    }
 }
