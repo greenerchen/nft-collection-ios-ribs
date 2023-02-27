@@ -15,19 +15,9 @@ protocol AssetDetailRoutable {
 
 protocol AssetDetailListener {}
 
-protocol AssetDetailPresentable {
-    func popViewController()
-}
+class AssetDetailPresenter: Presenter {}
 
-class AssetDetailPresenter: Presenter, AssetDetailPresentable {
-    func popViewController() {
-        navigationController?.popViewController(animated: true)
-    }
-}
-
-protocol AssetDetailListenable: Listenable {
-    func getNavigationController() -> UINavigationController?
-}
+protocol AssetDetailListenable: Listenable {}
 
 protocol AssetDetailBuildable {
     static func build(withListener listener: AssetDetailListenable?, asset: Asset) -> AssetDetailCoordinator

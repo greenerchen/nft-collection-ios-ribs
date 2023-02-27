@@ -13,19 +13,11 @@ protocol AssetCollectionRoutable {
     func attachAssetDetail(withAsset asset: Asset, transitionStyle: NavigationTransitionStyle)
 }
 
-protocol AssetCollectionPresentable: Presentable {
-    func pushViewController(_ viewController: UIViewController)
-}
-
 protocol AssetCollectionBuildable {
     static func build(withListener listener: AssetCollectionListenable?) -> AssetCollectionCoordinator
 }
 
-class AssetCollectionPresenter: Presenter, AssetCollectionPresentable {
-    func pushViewController(_ viewController: UIViewController) {
-        navigationController?.pushViewController(viewController, animated: true)
-    }
-}
+class AssetCollectionPresenter: Presenter {}
 
 class AssetCollectionCoordinator: Coordinator {
     
