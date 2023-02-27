@@ -34,8 +34,10 @@ extension AssetCollectionCoordinator: AssetCollectionRoutable {
         attachChild(coordinator)
         guard let viewController = topMostViewController else { return }
         switch transitionStyle {
-        case .pop:
+        case .push:
             (presenter as? AssetCollectionPresenter)?.pushViewController(viewController)
+        default:
+            break
         }
     }
 }
