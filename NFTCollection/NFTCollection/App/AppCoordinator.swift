@@ -9,6 +9,7 @@ import UIKit
 
 protocol AppRoutable: Routable {
     func attachAssetCollection()
+    func attachAssetDetail(withAsset asset: Asset, transitionStyle: NavigationTransitionStyle)
 }
 
 protocol AppPresentable {
@@ -42,8 +43,30 @@ extension AppCoordinator: AppRoutable {
         guard let viewController = coordinator.presenter?.viewController else { return }
         (presenter as? AppPresenter)?.setRootViewController(viewController)
     }
+    
+    func attachAssetDetail(withAsset asset: Asset, transitionStyle: NavigationTransitionStyle) {
+        let coordinator = AssetDetailCoordinator.build(withListener: self, asset: asset)
+        attachChild(coordinator)
+        guard let viewController = coordinator.presenter?.viewController else { return }
+        switch transitionStyle {
+        case .push:
+            (presenter as? AppPresenter)?.pushViewController(viewController)
+        default:
+            break
+        }
+    }
 }
 
 // MARK: - AssetCollectionListenable Impl
 
-extension AppCoordinator: AssetCollectionListenable {}
+extension AppCoordinator: AssetCollectionListenable {
+    func didSelectAsset(_ asset: Asset) {
+        attachAssetDetail(withAsset: asset, transitionStyle: .push)
+    }
+}
+
+// MARK: - AssetDetailListenable Impl
+
+extension AppCoordinator: AssetDetailListenable {
+    
+}

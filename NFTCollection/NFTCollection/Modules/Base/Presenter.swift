@@ -27,7 +27,7 @@ class Presenter: Presentable {
     }
     
     func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        (viewController as? UINavigationController)?.pushViewController(viewController, animated: animated)
+        (self.viewController as? UINavigationController)?.pushViewController(viewController, animated: animated)
     }
     
     func pushViewController(_ viewController: UIViewController) {

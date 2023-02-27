@@ -10,6 +10,7 @@ import RxSwift
 
 protocol AssetCollectionInteractable: Interactable {
     var router: AssetCollectionRoutable? { get set }
+    var listener: AssetCollectionListenable? { get set }
 }
 
 class AssetCollectionViewModel: Interactor, AssetCollectionInteractable {
@@ -21,13 +22,15 @@ class AssetCollectionViewModel: Interactor, AssetCollectionInteractable {
     
     // MARK: AssetCollectionInteractable Impl
     var router: AssetCollectionRoutable?
+    var listener: AssetCollectionListenable?
     
     lazy var wallet: Wallet = Wallet(etherAddress: "0x19818f44faf5a217f619aff0fd487cb2a55cca65", balance: 0.0)
     lazy var assetRepository: AssetsLoadable = OpenseaRepository(httpClient: RxHTTPClient(), wallet: wallet)
     lazy var ethRepository: EthererumLoadable = InfuraRepository(httpClient: RxHTTPClient(), wallet: wallet)
     
-    init(router: AssetCollectionRoutable? = nil) {
+    init(router: AssetCollectionRoutable? = nil, listener: AssetCollectionListenable? = nil) {
         self.router = router
+        self.listener = listener
     }
 
     private let bag = DisposeBag()
@@ -53,7 +56,7 @@ extension AssetCollectionViewModel: AssetCollectionPresentableListener {
     }
     
     func didSelectItem(asset: Asset) {
-        router?.attachAssetDetail(withAsset: asset, transitionStyle: .pop)
+        listener?.didSelectAsset(asset)
     }
     
     func getEthBalance() -> Observable<Double> {
