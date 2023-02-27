@@ -7,12 +7,12 @@
 
 import UIKit
 
-protocol RootRoutable: Routable {
+protocol AppRoutable: Routable {
     func attachAssetCollection()
 }
 
-class RootCoordinator: Coordinator {
-    override func start() -> RootCoordinator {
+class AppCoordinator: Coordinator {
+    override func start() -> AppCoordinator {
         attachAssetCollection()
         return self
     }
@@ -20,7 +20,7 @@ class RootCoordinator: Coordinator {
 
 // MARK: - RootRoutable Impl
 
-extension RootCoordinator: RootRoutable {
+extension AppCoordinator: AppRoutable {
     func attachAssetCollection() {
         let coordinator: AssetCollectionCoordinator = AssetCollectionCoordinator.build(withListener: self)
         attachChild(coordinator)
@@ -29,4 +29,4 @@ extension RootCoordinator: RootRoutable {
 
 // MARK: - AssetCollectionListenable Impl
 
-extension RootCoordinator: AssetCollectionListenable {}
+extension AppCoordinator: AssetCollectionListenable {}
