@@ -11,10 +11,25 @@ protocol AppRoutable: Routable {
     func attachAssetCollection()
 }
 
+protocol AppPresentable {
+    func setRootViewController(_ viewController: UIViewController)
+}
+
+class AppPresenter: Presenter, AppPresentable {
+    func setRootViewController(_ viewController: UIViewController) {
+        (self.viewController as? UINavigationController)?.setViewControllers([viewController], animated: false)
+    }
+}
+
 class AppCoordinator: Coordinator {
-    override func start() -> AppCoordinator {
+    
+    init(navigationController: UINavigationController) {
+        let presenter = AppPresenter(viewController: navigationController)
+        super.init(presenter: presenter)
+    }
+    
+    override func start() {
         attachAssetCollection()
-        return self
     }
 }
 
@@ -24,6 +39,8 @@ extension AppCoordinator: AppRoutable {
     func attachAssetCollection() {
         let coordinator: AssetCollectionCoordinator = AssetCollectionCoordinator.build(withListener: self)
         attachChild(coordinator)
+        guard let viewController = coordinator.presenter?.viewController else { return }
+        (presenter as? AppPresenter)?.setRootViewController(viewController)
     }
 }
 

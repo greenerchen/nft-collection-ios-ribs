@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 
 enum NavigationTransitionStyle {
+    case push
     case pop
 }
 
@@ -87,7 +88,7 @@ class Coordinator: Coordinatable {
     // MARK: RxSwift supported
     let bag = DisposeBag()
     
-    func start() -> Coordinator {
+    func start() {
         fatalError("func start() has not implemented")
     }
 }
