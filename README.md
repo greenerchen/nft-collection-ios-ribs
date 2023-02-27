@@ -105,11 +105,12 @@ Request Body
 | balance | Double |
 
 # App Architecture
-This projecct adopts the MVVM-C pattern for interaction, presentation, navigation and the repository pattern for fetching remote data.
+This projecct adopts the MVVM-C (Model-View-ViewModel-[Coordinator](https://vimeo.com/144116310)) pattern, which separates business logic, presentation, flow navigation from massive view controller. And the repository pattern is used for accessing data and keeping the implementation of fetching remote data agnostic to other layers.
 
 ![Architecture](NFTCollectionArchitecture.png)
 
 # State Management
-Coordinators manage app states in a tree. Each coordinator node is a doubly linked-list node, which enables communication with its parent node and children nodes.
+Application state is managed and represented by the Coordinators that are currently attached to the Coordinator tree. 
 
-![State Management](NFTCollectionStateManagement.png)
+![State Management](https://user-images.githubusercontent.com/1248888/221448870-712b9dae-f4d3-462d-acef-407dba01e719.png)
+
