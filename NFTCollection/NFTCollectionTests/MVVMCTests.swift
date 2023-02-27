@@ -29,8 +29,8 @@ final class MVVMCTests: XCTestCase {
     }
 
     func testCoordinatorIsAssignedListener_expectNoRetainCycles() throws {
-        var sut: RootCoordinator? = RootCoordinator()
-        let presenter = AssetCollectionPresenter()
+        var sut: AppCoordinator? = AppCoordinator(navigationController: UINavigationController())
+        let presenter = AssetCollectionPresenter(viewController: UIViewController())
         let child = AssetCollectionCoordinator(presenter: presenter, listener: sut)
         sut?.attachChild(child)
         
