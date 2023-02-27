@@ -54,8 +54,7 @@ extension AssetCollectionCoordinator: AssetCollectionBuildable {
     static func build(withListener listener: AssetCollectionListenable?) -> AssetCollectionCoordinator {
         let viewModel = AssetCollectionViewModel()
         let viewController = AssetCollectionViewController(viewModel: viewModel, listener: viewModel)
-        let navigationController = UINavigationController(rootViewController: viewController)
-        let presenter = AssetCollectionPresenter(viewController: navigationController, navigationController: navigationController)
+        let presenter = AssetCollectionPresenter(viewController: viewController)
         let coordinator = AssetCollectionCoordinator(
             presenter: presenter,
             listener: listener
@@ -66,9 +65,5 @@ extension AssetCollectionCoordinator: AssetCollectionBuildable {
 }
 
 // MARK: - AssetDetailListenable Impl
-extension AssetCollectionCoordinator: AssetDetailListenable {
-    func getNavigationController() -> UINavigationController? {
-        presenter?.navigationController
-    }
-}
+extension AssetCollectionCoordinator: AssetDetailListenable {}
 

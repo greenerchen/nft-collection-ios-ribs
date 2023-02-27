@@ -60,7 +60,7 @@ extension AssetDetailCoordinator: AssetDetailBuildable {
         let viewModel = AssetDetailViewModel(asset: asset)
         let view = AssetDetailView(viewModel: viewModel)
         let viewController = UIHostingController(rootView: view)
-        let presenter = AssetDetailPresenter(viewController: viewController, navigationController: listener?.getNavigationController())
+        let presenter = AssetDetailPresenter(viewController: viewController)
         let coordinator = AssetDetailCoordinator(
             presenter: presenter,
             listener: listener,
