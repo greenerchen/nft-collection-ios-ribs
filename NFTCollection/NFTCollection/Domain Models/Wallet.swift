@@ -9,5 +9,5 @@ import Foundation
 
 struct Wallet {
     let etherAddress: String
-    var balance: Double
+    var balance: Float80
 }

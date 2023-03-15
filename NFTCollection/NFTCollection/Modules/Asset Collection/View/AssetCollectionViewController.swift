@@ -12,7 +12,7 @@ import RxCocoa
 protocol AssetCollectionPresentableListener: Listenable {
     func getAssets() -> Observable<[Asset]>
     func didSelectItem(asset: Asset)
-    func getEthBalance() -> Observable<Double>
+    func getEthBalance() -> Observable<Float80>
 }
 
 class AssetCollectionViewController: UICollectionViewController {

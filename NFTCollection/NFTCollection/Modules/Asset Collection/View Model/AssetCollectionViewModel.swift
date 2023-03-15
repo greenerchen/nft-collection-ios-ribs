@@ -18,7 +18,7 @@ class AssetCollectionViewModel: Interactor, AssetCollectionInteractable {
     // MARK: RxSwift Subjects
     
     var assets = BehaviorSubject<[Asset]>(value: [])
-    lazy var ethBalance = BehaviorSubject<Double>(value: wallet.balance)
+    lazy var ethBalance = BehaviorSubject<Float80>(value: wallet.balance)
     
     // MARK: AssetCollectionInteractable Impl
     var router: AssetCollectionRoutable?
@@ -59,7 +59,7 @@ extension AssetCollectionViewModel: AssetCollectionPresentableListener {
         listener?.didSelectAsset(asset)
     }
     
-    func getEthBalance() -> Observable<Double> {
+    func getEthBalance() -> Observable<Float80> {
         ethRepository.getEthBalance()
             .flatMap { [weak self] balance in
                 self?.wallet.balance = balance

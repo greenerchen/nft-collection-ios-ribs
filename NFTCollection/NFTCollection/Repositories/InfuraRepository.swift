@@ -25,13 +25,13 @@ class InfuraRepository {
 }
 
 extension InfuraRepository: EthererumLoadable {
-    func getEthBalance() -> Observable<Double> {
+    func getEthBalance() -> Observable<Float80> {
         do {
             let url = URL(string: endpoint)!
             let body: Data = try EthGetBalanceParams(ethAddress: wallet.etherAddress).jsonData()
             return httpClient
                 .post(url, body: body)
-                .map { data -> Double in
+                .map { data -> Float80 in
                     do {
                         let jsonString = String(data: data, encoding: .utf8)
                         let response = try EthBalanceResponse(JSONString: jsonString!)
@@ -65,11 +65,11 @@ struct EthGetBalanceParams: Codable {
 }
 
 struct EthBalanceResponse: ImmutableMappable {
-    let balance: Double
+    let balance: Float80
     
     init(map: Map) throws {
         /// The result value is hex format value in Wei.  1 Ether = 1000000000000000000 Wei
-        let hex: String = try map.value("result", default: "0x0")
-        balance      = atof(hex) / 1000000000000000000
+        let wei: Float80 = Float80(try map.value("result", default: "0x0")) ?? 0.0
+        balance      = wei / Float80(1000000000000000000)
     }
 }

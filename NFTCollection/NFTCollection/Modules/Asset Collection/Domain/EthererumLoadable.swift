@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol EthererumLoadable {
-    func getEthBalance() -> Observable<Double>
+    func getEthBalance() -> Observable<Float80>
 }
