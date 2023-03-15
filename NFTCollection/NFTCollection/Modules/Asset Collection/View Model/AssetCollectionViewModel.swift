@@ -35,8 +35,8 @@ class AssetCollectionViewModel: Interactor, AssetCollectionInteractable {
 
     private let bag = DisposeBag()
     
-    func getAssets() {
-        assetRepository.loadAssets()
+    func getAssets(loadMore: Bool) {
+        assetRepository.loadAssets(loadMore: loadMore)
             .observe(on: MainScheduler.asyncInstance)
             .subscribe { [weak self] assetResult in
                 self?.assets.onNext(assetResult.assets)
@@ -50,8 +50,8 @@ class AssetCollectionViewModel: Interactor, AssetCollectionInteractable {
 // MARK: - AssetCollectionPresentableListener Impl
 
 extension AssetCollectionViewModel: AssetCollectionPresentableListener {
-    func getAssets() -> Observable<[Asset]> {
-        assetRepository.loadAssets()
+    func getAssets(loadMore: Bool) -> Observable<[Asset]> {
+        assetRepository.loadAssets(loadMore: loadMore)
             .map { $0.assets }
     }
     

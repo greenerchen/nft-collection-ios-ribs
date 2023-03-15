@@ -33,7 +33,10 @@ class OpenseaRepository {
 }
 
 extension OpenseaRepository: AssetsLoadable {
-    func loadAssets() -> Observable<AssetsResult> {
+    func loadAssets(loadMore: Bool) -> Observable<AssetsResult> {
+        if loadMore && nextCursor == nil { // already loaded the last page
+            return .just(AssetsResult(assets: [], nextCursor: nil))
+        }
         guard let url: URL = URLBuilder(urlString: endpoint)
             .appendQuery(name: "format", value: "json")
             .appendQuery(name: "owner", value: wallet.etherAddress)

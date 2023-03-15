@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 protocol AssetCollectionPresentableListener: Listenable {
-    func getAssets() -> Observable<[Asset]>
+    func getAssets(loadMore: Bool) -> Observable<[Asset]>
     func didSelectItem(asset: Asset)
     func getEthBalance() -> Observable<Float80>
 }
@@ -42,7 +42,7 @@ class AssetCollectionViewController: UICollectionViewController {
         subscribeCellSelected()
         subscribeWillDisplayCell()
         
-        fetchAssets()
+        fetchAssets(loadMore: false)
     }
 
     private func setupNavigationTitle() {
@@ -100,7 +100,7 @@ class AssetCollectionViewController: UICollectionViewController {
                 do {
                     let assetCount = try self.assets.value().count
                     if indexPath.item == assetCount - 1 {
-                        self.fetchAssets()
+                        self.fetchAssets(loadMore: true)
                     }
                 } catch {
                     debugPrint(error)
@@ -109,8 +109,8 @@ class AssetCollectionViewController: UICollectionViewController {
             .disposed(by: bag)
     }
     
-    private func fetchAssets() {
-        viewModel?.getAssets()
+    private func fetchAssets(loadMore: Bool) {
+        viewModel?.getAssets(loadMore: loadMore)
             .subscribe { [weak self] assets in
                 guard let self = self else { return }
                 guard let currentAssets = try? self.assets.value() + assets else {
