@@ -82,13 +82,8 @@ class AssetCollectionViewController: UICollectionViewController {
     private func subscribeCellSelected() {
         collectionView.rx.itemSelected
             .subscribe(onNext: { [weak self] indexPath in
-                guard let self = self else { return }
-                do {
-                    let asset = try self.assets.value()[indexPath.item]
-                    self.viewModel?.didSelectItem(asset: asset)
-                } catch {
-                    debugPrint(error)
-                }
+                guard let self = self, let viewModel = self.viewModel else { return }
+                viewModel.didSelectItem(at: indexPath)
             })
             .disposed(by: bag)
     }
@@ -96,8 +91,7 @@ class AssetCollectionViewController: UICollectionViewController {
     private func subscribeWillDisplayCell() {
         collectionView.rx.willDisplayCell
             .subscribe(onNext: { [weak self] cell, indexPath in
-                guard let self = self,
-                      let viewModel = self.viewModel else { return }
+                guard let self = self, let viewModel = self.viewModel else { return }
                 do {
                     let assetCount = try viewModel.assets.value().count
                     if indexPath.item == assetCount - 1 {

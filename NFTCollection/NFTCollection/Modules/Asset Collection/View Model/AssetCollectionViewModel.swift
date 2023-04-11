@@ -53,6 +53,11 @@ class AssetCollectionViewModel: Interactor, AssetCollectionInteractable {
             }
             .disposed(by: bag)
     }
+    
+    func didSelectItem(at indexPath: IndexPath) {
+        guard let asset = try? assets.value()[indexPath.item] else { return }
+        listener?.didSelectAsset(asset)
+    }
 }
 
 // MARK: - AssetCollectionPresentableListener Impl
