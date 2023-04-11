@@ -64,14 +64,15 @@ class AssetCollectionViewController: UICollectionViewController {
     
     private func subscribeEthBalance() {
         viewModel?.ethBalance
+            .observe(on: MainScheduler.asyncInstance)
             .map { "\($0) ETH" }
             .bind(to: navigationItem.rx.title)
             .disposed(by: bag)
     }
     
     private func subscribeAssets() {
-        assets
-            .skip(1)
+        viewModel?.assets
+            .observe(on: MainScheduler.asyncInstance)
             .bind(to: collectionView.rx.items(cellIdentifier: ReusableCellID.AssetCollectionCell.rawValue, cellType: AssetCollectionCell.self)) { indexPath, asset, cell in
                 cell.bind(viewModel: AssetCollectionCellModel(asset: asset))
             }
@@ -95,9 +96,10 @@ class AssetCollectionViewController: UICollectionViewController {
     private func subscribeWillDisplayCell() {
         collectionView.rx.willDisplayCell
             .subscribe(onNext: { [weak self] cell, indexPath in
-                guard let self = self else { return }
+                guard let self = self,
+                      let viewModel = self.viewModel else { return }
                 do {
-                    let assetCount = try self.assets.value().count
+                    let assetCount = try viewModel.assets.value().count
                     if indexPath.item == assetCount - 1 {
                         self.fetchAssets(loadMore: true)
                     }
@@ -113,15 +115,6 @@ class AssetCollectionViewController: UICollectionViewController {
     }
     
     private func fetchAssets(loadMore: Bool) {
-        viewModel?.getAssets(loadMore: loadMore)
-            .subscribe { [weak self] assets in
-                guard let self = self else { return }
-                guard let currentAssets = try? self.assets.value() + assets else {
-                    self.assets.onNext(assets)
-                    return
-                }
-                self.assets.onNext(currentAssets)
-            }
-            .disposed(by: bag)
+        viewModel?.fetchAssets(loadMore: loadMore)
     }
 }

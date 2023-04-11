@@ -34,14 +34,12 @@ class AssetCollectionViewModel: Interactor, AssetCollectionInteractable {
     }
 
     private let bag = DisposeBag()
-    
-    func getAssets(loadMore: Bool) {
+
+    func fetchAssets(loadMore: Bool) {
         assetRepository.loadAssets(loadMore: loadMore)
-            .observe(on: MainScheduler.asyncInstance)
-            .subscribe { [weak self] assetResult in
-                self?.assets.onNext(assetResult.assets)
-            } onFailure: { error in
-                // TODO: the presenter shows a error dialogue
+            .map { (try self.assets.value(), $0.assets) }
+            .subscribe { [weak self] (currentAssets, newAssets) in
+                self?.assets.onNext(currentAssets + newAssets)
             }
             .disposed(by: bag)
     }
