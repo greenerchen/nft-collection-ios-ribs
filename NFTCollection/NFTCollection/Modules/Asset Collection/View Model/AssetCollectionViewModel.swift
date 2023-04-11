@@ -43,6 +43,16 @@ class AssetCollectionViewModel: Interactor, AssetCollectionInteractable {
             }
             .disposed(by: bag)
     }
+    
+    func fetchEthBalance() {
+        ethRepository.getEthBalance()
+            .subscribe { [weak self] result in
+                guard case let .success(balance) = result else { return }
+                self?.wallet.balance = balance
+                self?.ethBalance.onNext(balance)
+            }
+            .disposed(by: bag)
+    }
 }
 
 // MARK: - AssetCollectionPresentableListener Impl
@@ -64,15 +74,5 @@ extension AssetCollectionViewModel: AssetCollectionPresentableListener {
                 self?.ethBalance.onNext(balance)
                 return .just(balance)
             }
-    }
-    
-    func fetchEthBalance() {
-        ethRepository.getEthBalance()
-            .subscribe { [weak self] result in
-                guard case let .success(balance) = result else { return }
-                self?.wallet.balance = balance
-                self?.ethBalance.onNext(balance)
-            }
-            .disposed(by: bag)
     }
 }
