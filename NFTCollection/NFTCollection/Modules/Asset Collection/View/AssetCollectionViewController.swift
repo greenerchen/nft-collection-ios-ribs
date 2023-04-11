@@ -42,6 +42,7 @@ class AssetCollectionViewController: UICollectionViewController {
         subscribeCellSelected()
         subscribeWillDisplayCell()
         
+        fetchEthBalance()
         fetchAssets(loadMore: false)
     }
 
@@ -62,13 +63,9 @@ class AssetCollectionViewController: UICollectionViewController {
     }
     
     private func subscribeEthBalance() {
-        viewModel?.getEthBalance()
-            .observe(on: MainScheduler.instance)
-            .subscribe { [weak self] result in
-                if case let .success(balance) = result {
-                    self?.title = "\(balance) ETH"
-                }
-            }
+        viewModel?.ethBalance
+            .map { "\($0) ETH" }
+            .bind(to: navigationItem.rx.title)
             .disposed(by: bag)
     }
     
@@ -109,6 +106,10 @@ class AssetCollectionViewController: UICollectionViewController {
                 }
             })
             .disposed(by: bag)
+    }
+    
+    private func fetchEthBalance() {
+        viewModel?.fetchEthBalance()
     }
     
     private func fetchAssets(loadMore: Bool) {
