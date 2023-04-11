@@ -31,7 +31,6 @@
 		AA9154A029A7A85E00A5DB1F /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA91549F29A7A85E00A5DB1F /* Asset.swift */; };
 		AA9154A229A7A88B00A5DB1F /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154A129A7A88B00A5DB1F /* Wallet.swift */; };
 		AA9154A429A7A90300A5DB1F /* RxSwiftHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154A329A7A90300A5DB1F /* RxSwiftHTTPClient.swift */; };
-		AA9154A629A7A9EB00A5DB1F /* MockHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154A529A7A9EB00A5DB1F /* MockHTTPClient.swift */; };
 		AA9154A829A7AA6000A5DB1F /* OpenseaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154A729A7AA6000A5DB1F /* OpenseaRepository.swift */; };
 		AA9154AA29A7AA7000A5DB1F /* AssetLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154A929A7AA7000A5DB1F /* AssetLoadable.swift */; };
 		AA9154B029A7AC3400A5DB1F /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154AF29A7AC3400A5DB1F /* URLBuilder.swift */; };
@@ -77,7 +76,6 @@
 		AA91549F29A7A85E00A5DB1F /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		AA9154A129A7A88B00A5DB1F /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		AA9154A329A7A90300A5DB1F /* RxSwiftHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftHTTPClient.swift; sourceTree = "<group>"; };
-		AA9154A529A7A9EB00A5DB1F /* MockHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHTTPClient.swift; sourceTree = "<group>"; };
 		AA9154A729A7AA6000A5DB1F /* OpenseaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenseaRepository.swift; sourceTree = "<group>"; };
 		AA9154A929A7AA7000A5DB1F /* AssetLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetLoadable.swift; sourceTree = "<group>"; };
 		AA9154AF29A7AC3400A5DB1F /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
@@ -243,7 +241,6 @@
 			isa = PBXGroup;
 			children = (
 				AA9154A329A7A90300A5DB1F /* RxSwiftHTTPClient.swift */,
-				AA9154A529A7A9EB00A5DB1F /* MockHTTPClient.swift */,
 				AA9154AF29A7AC3400A5DB1F /* URLBuilder.swift */,
 			);
 			path = Networking;
@@ -456,7 +453,6 @@
 				AA9154B929A7B13900A5DB1F /* Listenable.swift in Sources */,
 				AA9154A229A7A88B00A5DB1F /* Wallet.swift in Sources */,
 				AA91547829A7A5F200A5DB1F /* AssetCollectionViewController.swift in Sources */,
-				AA9154A629A7A9EB00A5DB1F /* MockHTTPClient.swift in Sources */,
 				AA9154A429A7A90300A5DB1F /* RxSwiftHTTPClient.swift in Sources */,
 				AA6F320E29A8498900AA4925 /* AssetDetailView.swift in Sources */,
 				AA6F321029A849A500AA4925 /* AssetDetailViewModel.swift in Sources */,
