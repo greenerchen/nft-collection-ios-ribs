@@ -10,9 +10,9 @@ import RxSwift
 import RxCocoa
 
 protocol AssetCollectionPresentableListener: Listenable {
-    func getAssets(loadMore: Bool) -> Single<[Asset]>
-    func didSelectItem(asset: Asset)
-    func getEthBalance() -> Single<Float80>
+    func fetchAssets(loadMore: Bool)
+    func fetchEthBalance()
+    func didSelectItem(at indexPath: IndexPath)
 }
 
 class AssetCollectionViewController: UICollectionViewController {

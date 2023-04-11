@@ -35,6 +35,11 @@ class AssetCollectionViewModel: Interactor, AssetCollectionInteractable {
 
     private let bag = DisposeBag()
 
+}
+
+// MARK: - AssetCollectionPresentableListener Impl
+
+extension AssetCollectionViewModel: AssetCollectionPresentableListener {
     func fetchAssets(loadMore: Bool) {
         assetRepository.loadAssets(loadMore: loadMore)
             .map { (try self.assets.value(), $0.assets) }
@@ -57,27 +62,5 @@ class AssetCollectionViewModel: Interactor, AssetCollectionInteractable {
     func didSelectItem(at indexPath: IndexPath) {
         guard let asset = try? assets.value()[indexPath.item] else { return }
         listener?.didSelectAsset(asset)
-    }
-}
-
-// MARK: - AssetCollectionPresentableListener Impl
-
-extension AssetCollectionViewModel: AssetCollectionPresentableListener {
-    func getAssets(loadMore: Bool) -> Single<[Asset]> {
-        assetRepository.loadAssets(loadMore: loadMore)
-            .map { $0.assets }
-    }
-    
-    func didSelectItem(asset: Asset) {
-        listener?.didSelectAsset(asset)
-    }
-    
-    func getEthBalance() -> Single<Float80> {
-        ethRepository.getEthBalance()
-            .flatMap { [weak self] balance in
-                self?.wallet.balance = balance
-                self?.ethBalance.onNext(balance)
-                return .just(balance)
-            }
     }
 }
