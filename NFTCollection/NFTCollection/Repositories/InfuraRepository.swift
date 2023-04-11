@@ -25,7 +25,7 @@ class InfuraRepository {
 }
 
 extension InfuraRepository: EthererumLoadable {
-    func getEthBalance() -> Observable<Float80> {
+    func getEthBalance() -> Single<Float80> {
         do {
             let url = URL(string: endpoint)!
             let body: Data = try EthGetBalanceParams(ethAddress: wallet.etherAddress).jsonData()

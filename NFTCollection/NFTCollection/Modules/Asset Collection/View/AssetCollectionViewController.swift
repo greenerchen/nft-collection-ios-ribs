@@ -10,9 +10,9 @@ import RxSwift
 import RxCocoa
 
 protocol AssetCollectionPresentableListener: Listenable {
-    func getAssets(loadMore: Bool) -> Observable<[Asset]>
+    func getAssets(loadMore: Bool) -> Single<[Asset]>
     func didSelectItem(asset: Asset)
-    func getEthBalance() -> Observable<Float80>
+    func getEthBalance() -> Single<Float80>
 }
 
 class AssetCollectionViewController: UICollectionViewController {
@@ -64,9 +64,11 @@ class AssetCollectionViewController: UICollectionViewController {
     private func subscribeEthBalance() {
         viewModel?.getEthBalance()
             .observe(on: MainScheduler.instance)
-            .subscribe(onNext: { [weak self] balance in
-                self?.title = "\(balance) ETH"
-            })
+            .subscribe { [weak self] result in
+                if case let .success(balance) = result {
+                    self?.title = "\(balance) ETH"
+                }
+            }
             .disposed(by: bag)
     }
     

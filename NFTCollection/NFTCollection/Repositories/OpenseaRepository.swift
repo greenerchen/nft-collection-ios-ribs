@@ -33,7 +33,7 @@ class OpenseaRepository {
 }
 
 extension OpenseaRepository: AssetsLoadable {
-    func loadAssets(loadMore: Bool) -> Observable<AssetsResult> {
+    func loadAssets(loadMore: Bool) -> Single<AssetsResult> {
         if loadMore && nextCursor == nil { // already loaded the last page
             return .just(AssetsResult(assets: [], nextCursor: nil))
         }

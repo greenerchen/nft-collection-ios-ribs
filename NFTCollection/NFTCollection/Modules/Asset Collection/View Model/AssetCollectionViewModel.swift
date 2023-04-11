@@ -40,7 +40,7 @@ class AssetCollectionViewModel: Interactor, AssetCollectionInteractable {
             .observe(on: MainScheduler.asyncInstance)
             .subscribe { [weak self] assetResult in
                 self?.assets.onNext(assetResult.assets)
-            } onError: { error in
+            } onFailure: { error in
                 // TODO: the presenter shows a error dialogue
             }
             .disposed(by: bag)
@@ -50,7 +50,7 @@ class AssetCollectionViewModel: Interactor, AssetCollectionInteractable {
 // MARK: - AssetCollectionPresentableListener Impl
 
 extension AssetCollectionViewModel: AssetCollectionPresentableListener {
-    func getAssets(loadMore: Bool) -> Observable<[Asset]> {
+    func getAssets(loadMore: Bool) -> Single<[Asset]> {
         assetRepository.loadAssets(loadMore: loadMore)
             .map { $0.assets }
     }
@@ -59,12 +59,12 @@ extension AssetCollectionViewModel: AssetCollectionPresentableListener {
         listener?.didSelectAsset(asset)
     }
     
-    func getEthBalance() -> Observable<Float80> {
+    func getEthBalance() -> Single<Float80> {
         ethRepository.getEthBalance()
             .flatMap { [weak self] balance in
                 self?.wallet.balance = balance
                 self?.ethBalance.onNext(balance)
-                return Observable.just(balance)
+                return .just(balance)
             }
     }
 }

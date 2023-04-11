@@ -14,5 +14,5 @@ struct AssetsResult {
 }
 
 protocol AssetsLoadable {
-    func loadAssets(loadMore: Bool) -> Observable<AssetsResult>
+    func loadAssets(loadMore: Bool) -> Single<AssetsResult>
 }
