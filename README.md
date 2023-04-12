@@ -25,7 +25,7 @@ https://user-images.githubusercontent.com/1248888/221384761-ad9c6599-918c-4185-a
 
 
 # Flowchart
-![flowchart](https://user-images.githubusercontent.com/1248888/221384980-4da9fdf1-2949-45a8-98d8-546242dd6193.png)
+![Flowchart](https://user-images.githubusercontent.com/1248888/231381841-7a5c901d-0a91-4065-a2b1-1316b8289db3.png)
 
 
 # Payload Contract
@@ -96,7 +96,7 @@ Request Body
 | imageUrl | String |
 | name | String |
 | description | String |
-| permanentlink | String |
+| permanentLink | String |
 
 ## Wallet
 | Property | Type |
@@ -105,12 +105,13 @@ Request Body
 | balance | Double |
 
 # App Architecture
-This projecct adopts the MVVM-C (Model-View-ViewModel-[Coordinator](https://vimeo.com/144116310)) pattern, which separates business logic, presentation, flow navigation from massive view controller. And the repository pattern is used for accessing data and keeping the implementation of fetching remote data agnostic to other layers.
+This projecct adopts the [Uber RIBs](https://github.com/uber/RIBs/wiki) architecture, which separates a RIB into several units: interactor (business logic), builder (instantiates all the RIB's constituent classes), router (attaches or detaches RIBs to control flow navigation), presenter (optional. translates between models and views), view (optional. builds and updates the UI), and components (manages the RIB dependencies). Also, the repository pattern is used for accessing data and keeping the implementation of fetching remote data agnostic to other layers.
 
-![Architecture](NFTCollectionArchitecture.png)
+![Architecture](https://user-images.githubusercontent.com/1248888/231381950-640b71e2-f8ea-4d8d-9fa2-7fd1490a747e.png)
 
 # State Management
-Application state is managed and represented by the Coordinators that are currently attached to the Coordinator tree. 
+Application state is managed and represented by the RIBs that are currently attached to the RIBs tree.  
 
-![State Management](https://user-images.githubusercontent.com/1248888/221448870-712b9dae-f4d3-462d-acef-407dba01e719.png)
+![State-management](https://user-images.githubusercontent.com/1248888/231382000-966af35b-6920-4c90-8f8a-251585187486.png)
+
 
