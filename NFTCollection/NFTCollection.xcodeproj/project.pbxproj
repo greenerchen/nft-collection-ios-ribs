@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		AA10C43529E3EF1F0012E171 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AA10C43429E3EF1F0012E171 /* README.md */; };
 		AA61508129E6AF3A00AB4B93 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = AA61508029E6AF3A00AB4B93 /* RIBs */; };
+		AA61508829E6AFD100AB4B93 /* NFTCollectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA61508429E6AFD100AB4B93 /* NFTCollectionRouter.swift */; };
+		AA61508929E6AFD100AB4B93 /* NFTCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA61508529E6AFD100AB4B93 /* NFTCollectionViewController.swift */; };
+		AA61508A29E6AFD100AB4B93 /* NFTCollectionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA61508629E6AFD100AB4B93 /* NFTCollectionBuilder.swift */; };
+		AA61508B29E6AFD100AB4B93 /* NFTCollectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA61508729E6AFD100AB4B93 /* NFTCollectionInteractor.swift */; };
 		AA6F320C29A8492300AA4925 /* AssetDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F320B29A8492300AA4925 /* AssetDetailCoordinator.swift */; };
 		AA6F320E29A8498900AA4925 /* AssetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F320D29A8498900AA4925 /* AssetDetailView.swift */; };
 		AA6F321029A849A500AA4925 /* AssetDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F320F29A849A500AA4925 /* AssetDetailViewModel.swift */; };
@@ -59,6 +63,10 @@
 
 /* Begin PBXFileReference section */
 		AA10C43429E3EF1F0012E171 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		AA61508429E6AFD100AB4B93 /* NFTCollectionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTCollectionRouter.swift; sourceTree = "<group>"; };
+		AA61508529E6AFD100AB4B93 /* NFTCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTCollectionViewController.swift; sourceTree = "<group>"; };
+		AA61508629E6AFD100AB4B93 /* NFTCollectionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTCollectionBuilder.swift; sourceTree = "<group>"; };
+		AA61508729E6AFD100AB4B93 /* NFTCollectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTCollectionInteractor.swift; sourceTree = "<group>"; };
 		AA6F320B29A8492300AA4925 /* AssetDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailCoordinator.swift; sourceTree = "<group>"; };
 		AA6F320D29A8498900AA4925 /* AssetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailView.swift; sourceTree = "<group>"; };
 		AA6F320F29A849A500AA4925 /* AssetDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailViewModel.swift; sourceTree = "<group>"; };
@@ -119,6 +127,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA61508329E6AF9700AB4B93 /* RIBs */ = {
+			isa = PBXGroup;
+			children = (
+				AA61508C29E6AFD700AB4B93 /* NFTCollection */,
+			);
+			path = RIBs;
+			sourceTree = "<group>";
+		};
+		AA61508C29E6AFD700AB4B93 /* NFTCollection */ = {
+			isa = PBXGroup;
+			children = (
+				AA61508429E6AFD100AB4B93 /* NFTCollectionRouter.swift */,
+				AA61508529E6AFD100AB4B93 /* NFTCollectionViewController.swift */,
+				AA61508629E6AFD100AB4B93 /* NFTCollectionBuilder.swift */,
+				AA61508729E6AFD100AB4B93 /* NFTCollectionInteractor.swift */,
+			);
+			path = NFTCollection;
+			sourceTree = "<group>";
+		};
 		AA6F320829A848EB00AA4925 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +218,7 @@
 			children = (
 				AA91548729A7A60E00A5DB1F /* App */,
 				AA91548829A7A61300A5DB1F /* Domain Models */,
+				AA61508329E6AF9700AB4B93 /* RIBs */,
 				AA91548929A7A61D00A5DB1F /* Modules */,
 				AA91548B29A7A63C00A5DB1F /* Networking */,
 				AA91548C29A7A64400A5DB1F /* Repositories */,
@@ -457,6 +485,7 @@
 				AA9154B929A7B13900A5DB1F /* Listenable.swift in Sources */,
 				AA9154A229A7A88B00A5DB1F /* Wallet.swift in Sources */,
 				AA91547829A7A5F200A5DB1F /* AssetCollectionViewController.swift in Sources */,
+				AA61508929E6AFD100AB4B93 /* NFTCollectionViewController.swift in Sources */,
 				AA9154A429A7A90300A5DB1F /* RxSwiftHTTPClient.swift in Sources */,
 				AA6F320E29A8498900AA4925 /* AssetDetailView.swift in Sources */,
 				AA6F321029A849A500AA4925 /* AssetDetailViewModel.swift in Sources */,
@@ -478,6 +507,9 @@
 				AA6F321C29A86DE100AA4925 /* InfuraRepository.swift in Sources */,
 				AA6F321E29A86E1A00AA4925 /* EthererumLoadable.swift in Sources */,
 				AA91547629A7A5F200A5DB1F /* SceneDelegate.swift in Sources */,
+				AA61508A29E6AFD100AB4B93 /* NFTCollectionBuilder.swift in Sources */,
+				AA61508829E6AFD100AB4B93 /* NFTCollectionRouter.swift in Sources */,
+				AA61508B29E6AFD100AB4B93 /* NFTCollectionInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
