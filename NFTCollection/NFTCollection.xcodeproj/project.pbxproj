@@ -13,6 +13,7 @@
 		AA61508929E6AFD100AB4B93 /* NFTCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA61508529E6AFD100AB4B93 /* NFTCollectionViewController.swift */; };
 		AA61508A29E6AFD100AB4B93 /* NFTCollectionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA61508629E6AFD100AB4B93 /* NFTCollectionBuilder.swift */; };
 		AA61508B29E6AFD100AB4B93 /* NFTCollectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA61508729E6AFD100AB4B93 /* NFTCollectionInteractor.swift */; };
+		AA61508F29E6B06D00AB4B93 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA61508E29E6B06D00AB4B93 /* GeneratedMocks.swift */; };
 		AA6F320C29A8492300AA4925 /* AssetDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F320B29A8492300AA4925 /* AssetDetailCoordinator.swift */; };
 		AA6F320E29A8498900AA4925 /* AssetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F320D29A8498900AA4925 /* AssetDetailView.swift */; };
 		AA6F321029A849A500AA4925 /* AssetDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F320F29A849A500AA4925 /* AssetDetailViewModel.swift */; };
@@ -49,6 +50,7 @@
 		AA9154C229A7BF2500A5DB1F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AA9154C129A7BF2500A5DB1F /* SnapKit */; };
 		AA9154D129A7C0E200A5DB1F /* AssetCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154D029A7C0E200A5DB1F /* AssetCollectionCell.swift */; };
 		AA9154D329A7C10E00A5DB1F /* AssetCollectionCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154D229A7C10E00A5DB1F /* AssetCollectionCellModel.swift */; };
+		AABBF40029ECD50900D7BDFF /* GeneratedRIBsMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBF3FF29ECD50900D7BDFF /* GeneratedRIBsMocks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,7 @@
 		AA61508529E6AFD100AB4B93 /* NFTCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTCollectionViewController.swift; sourceTree = "<group>"; };
 		AA61508629E6AFD100AB4B93 /* NFTCollectionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTCollectionBuilder.swift; sourceTree = "<group>"; };
 		AA61508729E6AFD100AB4B93 /* NFTCollectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTCollectionInteractor.swift; sourceTree = "<group>"; };
+		AA61508E29E6B06D00AB4B93 /* GeneratedMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		AA6F320B29A8492300AA4925 /* AssetDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailCoordinator.swift; sourceTree = "<group>"; };
 		AA6F320D29A8498900AA4925 /* AssetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailView.swift; sourceTree = "<group>"; };
 		AA6F320F29A849A500AA4925 /* AssetDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailViewModel.swift; sourceTree = "<group>"; };
@@ -97,6 +100,7 @@
 		AA9154BE29A7B38D00A5DB1F /* AssetCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCollectionViewModel.swift; sourceTree = "<group>"; };
 		AA9154D029A7C0E200A5DB1F /* AssetCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCollectionCell.swift; sourceTree = "<group>"; };
 		AA9154D229A7C10E00A5DB1F /* AssetCollectionCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCollectionCellModel.swift; sourceTree = "<group>"; };
+		AABBF3FF29ECD50900D7BDFF /* GeneratedRIBsMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedRIBsMocks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +134,7 @@
 		AA61508329E6AF9700AB4B93 /* RIBs */ = {
 			isa = PBXGroup;
 			children = (
-				AA61508C29E6AFD700AB4B93 /* NFTCollection */,
+				AA61508C29E6AFD700AB4B93 /* Collection */,
 			);
 			path = RIBs;
 			sourceTree = "<group>";
@@ -142,8 +146,13 @@
 				AA61508529E6AFD100AB4B93 /* NFTCollectionViewController.swift */,
 				AA61508629E6AFD100AB4B93 /* NFTCollectionBuilder.swift */,
 				AA61508729E6AFD100AB4B93 /* NFTCollectionInteractor.swift */,
+		AA61508D29E6B05900AB4B93 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				AA61508E29E6B06D00AB4B93 /* GeneratedMocks.swift */,
+				AABBF3FF29ECD50900D7BDFF /* GeneratedRIBsMocks.swift */,
 			);
-			path = NFTCollection;
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		AA6F320829A848EB00AA4925 /* View */ = {
@@ -182,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				AA6F322729ABA15E00AA4925 /* MVVMCTests.swift */,
+				AA61508D29E6B05900AB4B93 /* Mocks */,
 			);
 			path = NFTCollectionTests;
 			sourceTree = "<group>";
@@ -385,6 +395,7 @@
 				AA91546C29A7A5F200A5DB1F /* Sources */,
 				AA91546D29A7A5F200A5DB1F /* Frameworks */,
 				AA91546E29A7A5F200A5DB1F /* Resources */,
+				AABBF3E429ECB84900D7BDFF /* Mockolo */,
 			);
 			buildRules = (
 			);
@@ -469,12 +480,36 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AABBF3E429ECB84900D7BDFF /* Mockolo */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Mockolo;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/NFTCollectionTests/Mocks/AutogeneratedMocks.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd ${SRCROOT}\n/usr/local/bin/mockolo -s ./NFTCollection/RIBs -d ./NFTCollectionTests/Mocks/GeneratedMocks.swift -i NFTCollection --mock-all --mock-final -mocks ./NFTCollectionTests/Mocks/GeneratedRIBsMocks.swift -j 1\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AA6F322129ABA15E00AA4925 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				AA6F322829ABA15E00AA4925 /* MVVMCTests.swift in Sources */,
+				AA61508F29E6B06D00AB4B93 /* GeneratedMocks.swift in Sources */,
+				AABBF40029ECD50900D7BDFF /* GeneratedRIBsMocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
