@@ -30,3 +30,7 @@ func anyAssets() -> [Asset] {
 func anyEthBalance() -> Float80 {
     Float80(1.123456789012345678)
 }
+
+func anyError() -> Error {
+    OpenseaRepositoryError.invalidURL
+}

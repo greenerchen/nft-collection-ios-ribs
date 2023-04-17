@@ -33,6 +33,26 @@ final class OpenseaRepositoryTests: XCTestCase {
         XCTAssertEqual(result, [AssetsResult(assets: anyAssets(), nextCursor: nil)])
     }
 
+    func test_load_failed_emitsFailure() throws {
+        let sut = makeSUT()
+        
+        sut.loadAssetsHandler = { loadMore in
+            return Single<AssetsResult>.create { single in
+                single(.failure(OpenseaRepositoryError.invalidURL))
+                return Disposables.create()
+            }
+        }
+        
+        do {
+            let result = try sut.loadAssets(loadMore: false)
+                .toBlocking(timeout: 1.0)
+                .toArray()
+        } catch {
+            XCTAssertEqual(sut.loadAssetsCallCount, 1)
+            XCTAssertEqual(error as? OpenseaRepositoryError, .invalidURL)
+        }
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT() -> AssetsLoadableMock {
