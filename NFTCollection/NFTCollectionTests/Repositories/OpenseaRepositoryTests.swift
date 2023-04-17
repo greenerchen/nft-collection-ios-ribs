@@ -49,7 +49,7 @@ final class OpenseaRepositoryTests: XCTestCase {
         AssetsLoadableMock()
     }
 
-    private func expect(_ sut: AssetsLoadableMock, loadAssetsCallCount: Int, expectedAssets: [Asset], whenReceivedAssets receivedAssets: [Asset]) throws {
+    private func expect(_ sut: AssetsLoadableMock, loadAssetsCallCount: Int, expectedAssets: [Asset], whenReceivedAssets receivedAssets: [Asset], file: StaticString = #file, line: UInt = #line) throws {
         let exp = expectation(description: "Wait for loading")
         sut.loadAssetsHandler = { loadMore in
             return Single<AssetsResult>.create { single in
@@ -64,7 +64,7 @@ final class OpenseaRepositoryTests: XCTestCase {
             .toArray()
         wait(for: [exp], timeout: 1.0)
         
-        XCTAssertEqual(sut.loadAssetsCallCount, loadAssetsCallCount)
-        XCTAssertEqual(result, [AssetsResult(assets: expectedAssets, nextCursor: nil)])
+        XCTAssertEqual(sut.loadAssetsCallCount, loadAssetsCallCount, file: file, line: line)
+        XCTAssertEqual(result, [AssetsResult(assets: expectedAssets, nextCursor: nil)], file: file, line: line)
     }
 }
