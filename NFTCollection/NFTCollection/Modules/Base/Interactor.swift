@@ -8,6 +8,6 @@
 import Foundation
 
 /// The protocol of `Interactor`, which manages the business logic
-protocol Interactable: AnyObject {}
+protocol BaseInteractable: AnyObject {}
 
-class Interactor: Interactable, Listenable {}
+class BaseInteractor: BaseInteractable, Listenable {}

@@ -8,7 +8,7 @@
 import UIKit
 
 /// The protocol of `Presenter`, which manages the UIKit ViewController and SwiftUI View
-protocol Presentable: AnyObject {
+protocol BasePresentable: AnyObject {
     var viewController: UIViewController? { get set }
     
     /// Present the given view controller with the specific transition style
@@ -21,7 +21,7 @@ protocol Presentable: AnyObject {
     func popViewController()
 }
 
-class Presenter: Presentable {
+class BasePresenter: BasePresentable {
     var viewController: UIViewController?
     
     init(viewController: UIViewController? = nil) {

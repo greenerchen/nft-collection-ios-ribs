@@ -12,7 +12,7 @@ protocol AssetDetailInteractable {
     var router: AssetDetailRoutable? { get set }
 }
 
-class AssetDetailViewModel: Interactor, AssetDetailInteractable {
+class AssetDetailViewModel: BaseInteractor, AssetDetailInteractable {
     let collectionName: String
     let imageUrl: String
     let name: String

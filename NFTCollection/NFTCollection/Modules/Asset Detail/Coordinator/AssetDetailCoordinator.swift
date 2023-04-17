@@ -15,7 +15,7 @@ protocol AssetDetailRoutable {
 
 protocol AssetDetailListener {}
 
-class AssetDetailPresenter: Presenter {}
+class AssetDetailPresenter: BasePresenter {}
 
 protocol AssetDetailListenable: Listenable {
     func routeFromAssetDetailToAssetCollection()

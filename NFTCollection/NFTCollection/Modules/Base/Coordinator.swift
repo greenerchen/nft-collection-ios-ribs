@@ -18,7 +18,7 @@ protocol Routable: AnyObject {}
 /// The protocol of `Coordinator`, which route the page navigation and manage tates within a tree
 protocol Coordinatable: Routable {
     /// The presenter of this `Coordinator`
-    var presenter: Presentable? { get set }
+    var presenter: BasePresentable? { get set }
     /// The listener of this `Coordinator`, which communicates with the parent coordinator
     var listener: Listenable? { get set }
     /// The view controller of the top most child
@@ -44,7 +44,7 @@ class Coordinator: Coordinatable {
     var children: [Coordinatable]
     
     /// The presenter of this `Coordinator`
-    var presenter: Presentable?
+    var presenter: BasePresentable?
     
     /// The listener of this `Coordinator`, which communicates with the parent coordinator
     weak var listener: Listenable?
@@ -57,7 +57,7 @@ class Coordinator: Coordinatable {
     /// The parent coordinator
     weak var superCoordinator: Coordinatable?
     
-    init(children: [Coordinator] = [], presenter: Presentable? = nil, listener: Listenable? = nil) {
+    init(children: [Coordinator] = [], presenter: BasePresentable? = nil, listener: Listenable? = nil) {
         self.children = children
         self.presenter = presenter
         self.listener = listener

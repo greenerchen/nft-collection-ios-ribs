@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		AA10C43529E3EF1F0012E171 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AA10C43429E3EF1F0012E171 /* README.md */; };
 		AA61508129E6AF3A00AB4B93 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = AA61508029E6AF3A00AB4B93 /* RIBs */; };
-		AA61508829E6AFD100AB4B93 /* NFTCollectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA61508429E6AFD100AB4B93 /* NFTCollectionRouter.swift */; };
-		AA61508929E6AFD100AB4B93 /* NFTCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA61508529E6AFD100AB4B93 /* NFTCollectionViewController.swift */; };
-		AA61508A29E6AFD100AB4B93 /* NFTCollectionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA61508629E6AFD100AB4B93 /* NFTCollectionBuilder.swift */; };
-		AA61508B29E6AFD100AB4B93 /* NFTCollectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA61508729E6AFD100AB4B93 /* NFTCollectionInteractor.swift */; };
 		AA61508F29E6B06D00AB4B93 /* GeneratedRIBsMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA61508E29E6B06D00AB4B93 /* GeneratedRIBsMocks.swift */; };
 		AA6F320C29A8492300AA4925 /* AssetDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F320B29A8492300AA4925 /* AssetDetailCoordinator.swift */; };
 		AA6F320E29A8498900AA4925 /* AssetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F320D29A8498900AA4925 /* AssetDetailView.swift */; };
@@ -69,10 +65,6 @@
 
 /* Begin PBXFileReference section */
 		AA10C43429E3EF1F0012E171 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		AA61508429E6AFD100AB4B93 /* NFTCollectionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTCollectionRouter.swift; sourceTree = "<group>"; };
-		AA61508529E6AFD100AB4B93 /* NFTCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTCollectionViewController.swift; sourceTree = "<group>"; };
-		AA61508629E6AFD100AB4B93 /* NFTCollectionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTCollectionBuilder.swift; sourceTree = "<group>"; };
-		AA61508729E6AFD100AB4B93 /* NFTCollectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTCollectionInteractor.swift; sourceTree = "<group>"; };
 		AA61508E29E6B06D00AB4B93 /* GeneratedRIBsMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedRIBsMocks.swift; sourceTree = "<group>"; };
 		AA6F320B29A8492300AA4925 /* AssetDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailCoordinator.swift; sourceTree = "<group>"; };
 		AA6F320D29A8498900AA4925 /* AssetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailView.swift; sourceTree = "<group>"; };
@@ -83,7 +75,6 @@
 		AA91547029A7A5F200A5DB1F /* NFTCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NFTCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA91547329A7A5F200A5DB1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA91547529A7A5F200A5DB1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AA91547729A7A5F200A5DB1F /* AssetCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCollectionViewController.swift; sourceTree = "<group>"; };
 		AA91547C29A7A5F400A5DB1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA91547F29A7A5F400A5DB1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA91548129A7A5F400A5DB1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,10 +88,7 @@
 		AA9154B629A7B10B00A5DB1F /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		AA9154B829A7B13900A5DB1F /* Listenable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listenable.swift; sourceTree = "<group>"; };
 		AA9154BA29A7B1EC00A5DB1F /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		AA9154BC29A7B31D00A5DB1F /* AssetCollectionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCollectionCoordinator.swift; sourceTree = "<group>"; };
-		AA9154BE29A7B38D00A5DB1F /* AssetCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCollectionViewModel.swift; sourceTree = "<group>"; };
 		AA9154D029A7C0E200A5DB1F /* AssetCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCollectionCell.swift; sourceTree = "<group>"; };
-		AA9154D229A7C10E00A5DB1F /* AssetCollectionCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCollectionCellModel.swift; sourceTree = "<group>"; };
 		AA9154D229A7C10E00A5DB1F /* AssetCollectionCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCollectionCellPresenter.swift; sourceTree = "<group>"; };
 		AABBF3E529ECBBD900D7BDFF /* AssetCollectionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCollectionRouter.swift; sourceTree = "<group>"; };
 		AABBF3E629ECBBD900D7BDFF /* AssetCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCollectionViewController.swift; sourceTree = "<group>"; };
@@ -146,20 +134,14 @@
 		AA61508329E6AF9700AB4B93 /* RIBs */ = {
 			isa = PBXGroup;
 			children = (
-				AA61508C29E6AFD700AB4B93 /* Collection */,
 				AA61508C29E6AFD700AB4B93 /* AssetCollection */,
 			);
 			path = RIBs;
 			sourceTree = "<group>";
 		};
-		AA61508C29E6AFD700AB4B93 /* NFTCollection */ = {
 		AA61508C29E6AFD700AB4B93 /* AssetCollection */ = {
 			isa = PBXGroup;
 			children = (
-				AA61508429E6AFD100AB4B93 /* NFTCollectionRouter.swift */,
-				AA61508529E6AFD100AB4B93 /* NFTCollectionViewController.swift */,
-				AA61508629E6AFD100AB4B93 /* NFTCollectionBuilder.swift */,
-				AA61508729E6AFD100AB4B93 /* NFTCollectionInteractor.swift */,
 				AABBF3ED29ECBC6F00D7BDFF /* View */,
 				AABBF3E529ECBBD900D7BDFF /* AssetCollectionRouter.swift */,
 				AABBF3E629ECBBD900D7BDFF /* AssetCollectionViewController.swift */,
@@ -320,17 +302,6 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
-		AA91548E29A7A66A00A5DB1F /* Asset Collection */ = {
-			isa = PBXGroup;
-			children = (
-				AA9154AE29A7AB7000A5DB1F /* Coordinator */,
-				AA9154AB29A7AAFE00A5DB1F /* Domain */,
-				AA9154AC29A7AB1100A5DB1F /* View */,
-				AA9154AD29A7AB1D00A5DB1F /* View Model */,
-			);
-			path = "Asset Collection";
-			sourceTree = "<group>";
-		};
 		AA91548F29A7A67500A5DB1F /* Asset Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,12 +312,18 @@
 			path = "Asset Detail";
 			sourceTree = "<group>";
 		};
+		AA9154B129A7B02400A5DB1F /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				AA9154B229A7B0B000A5DB1F /* Coordinator.swift */,
+				AA9154B429A7B0E400A5DB1F /* Interactor.swift */,
+				AA9154B629A7B10B00A5DB1F /* Presenter.swift */,
+				AA9154B829A7B13900A5DB1F /* Listenable.swift */,
 			);
+			path = Base;
 			sourceTree = "<group>";
 		};
-		AA9154AC29A7AB1100A5DB1F /* View */ = {
+		AABBF3ED29ECBC6F00D7BDFF /* View */ = {
 			isa = PBXGroup;
 			children = (
 				AA9154D029A7C0E200A5DB1F /* AssetCollectionCell.swift */,
@@ -552,13 +529,10 @@
 			files = (
 				AA9154B929A7B13900A5DB1F /* Listenable.swift in Sources */,
 				AA9154A229A7A88B00A5DB1F /* Wallet.swift in Sources */,
-				AA91547829A7A5F200A5DB1F /* AssetCollectionViewController.swift in Sources */,
-				AA61508929E6AFD100AB4B93 /* NFTCollectionViewController.swift in Sources */,
 				AA9154A429A7A90300A5DB1F /* RxSwiftHTTPClient.swift in Sources */,
 				AA6F320E29A8498900AA4925 /* AssetDetailView.swift in Sources */,
 				AA6F321029A849A500AA4925 /* AssetDetailViewModel.swift in Sources */,
 				AA91547429A7A5F200A5DB1F /* AppDelegate.swift in Sources */,
-				AA9154BD29A7B31D00A5DB1F /* AssetCollectionCoordinator.swift in Sources */,
 				AABBF3EA29ECBBD900D7BDFF /* AssetCollectionViewController.swift in Sources */,
 				AA9154B029A7AC3400A5DB1F /* URLBuilder.swift in Sources */,
 				AA9154BB29A7B1EC00A5DB1F /* AppCoordinator.swift in Sources */,
@@ -572,16 +546,10 @@
 				AA9154B729A7B10B00A5DB1F /* Presenter.swift in Sources */,
 				AABBF3EB29ECBBD900D7BDFF /* AssetCollectionBuilder.swift in Sources */,
 				AA9154D129A7C0E200A5DB1F /* AssetCollectionCell.swift in Sources */,
-				AA9154BF29A7B38D00A5DB1F /* AssetCollectionViewModel.swift in Sources */,
-				AA9154D329A7C10E00A5DB1F /* AssetCollectionCellModel.swift in Sources */,
-				AA9154AA29A7AA7000A5DB1F /* AssetLoadable.swift in Sources */,
 				AA9154D329A7C10E00A5DB1F /* AssetCollectionCellPresenter.swift in Sources */,
 				AABBF3E929ECBBD900D7BDFF /* AssetCollectionRouter.swift in Sources */,
 				AA6F321C29A86DE100AA4925 /* InfuraRepository.swift in Sources */,
 				AA91547629A7A5F200A5DB1F /* SceneDelegate.swift in Sources */,
-				AA61508A29E6AFD100AB4B93 /* NFTCollectionBuilder.swift in Sources */,
-				AA61508829E6AFD100AB4B93 /* NFTCollectionRouter.swift in Sources */,
-				AA61508B29E6AFD100AB4B93 /* NFTCollectionInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

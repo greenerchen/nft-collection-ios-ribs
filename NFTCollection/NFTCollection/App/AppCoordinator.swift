@@ -17,7 +17,7 @@ protocol AppPresentable {
     func setRootViewController(_ viewController: UIViewController)
 }
 
-class AppPresenter: Presenter, AppPresentable {
+class AppPresenter: BasePresenter, AppPresentable {
     func setRootViewController(_ viewController: UIViewController) {
         (self.viewController as? UINavigationController)?.setViewControllers([viewController], animated: false)
     }
@@ -39,10 +39,10 @@ class AppCoordinator: Coordinator {
 
 extension AppCoordinator: AppRoutable {
     func attachAssetCollection() {
-        let coordinator: AssetCollectionCoordinator = AssetCollectionCoordinator.build(withListener: self)
-        attachChild(coordinator)
-        guard let viewController = coordinator.presenter?.viewController else { return }
-        (presenter as? AppPresenter)?.setRootViewController(viewController)
+//        let coordinator: AssetCollectionCoordinator = AssetCollectionCoordinator.build(withListener: self)
+//        attachChild(coordinator)
+//        guard let viewController = coordinator.presenter?.viewController else { return }
+//        (presenter as? AppPresenter)?.setRootViewController(viewController)
     }
     
     func attachAssetDetail(withAsset asset: Asset, transitionStyle: NavigationTransitionStyle) {
@@ -62,11 +62,11 @@ extension AppCoordinator: AppRoutable {
 
 // MARK: - AssetCollectionListenable Impl
 
-extension AppCoordinator: AssetCollectionListenable {
-    func didSelectAsset(_ asset: Asset) {
-        attachAssetDetail(withAsset: asset, transitionStyle: .push)
-    }
-}
+//extension AppCoordinator: AssetCollectionListenable {
+//    func didSelectAsset(_ asset: Asset) {
+//        attachAssetDetail(withAsset: asset, transitionStyle: .push)
+//    }
+//}
 
 // MARK: - AssetDetailListenable Impl
 
