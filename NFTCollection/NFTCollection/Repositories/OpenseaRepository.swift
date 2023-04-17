@@ -8,6 +8,16 @@
 import Foundation
 import RxSwift
 
+struct AssetsResult {
+    let assets: [Asset]
+    let nextCursor: String?
+}
+
+/// @mockable
+protocol AssetsLoadable {
+    func loadAssets(loadMore: Bool) -> Single<AssetsResult>
+}
+
 enum OpenseaRepositoryError: Error {
     case invalidURL
 }

@@ -26,7 +26,6 @@
 		AA6F323429ABA2F300AA4925 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = AA6F323329ABA2F300AA4925 /* SDWebImage */; };
 		AA91547429A7A5F200A5DB1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA91547329A7A5F200A5DB1F /* AppDelegate.swift */; };
 		AA91547629A7A5F200A5DB1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA91547529A7A5F200A5DB1F /* SceneDelegate.swift */; };
-		AA91547829A7A5F200A5DB1F /* AssetCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA91547729A7A5F200A5DB1F /* AssetCollectionViewController.swift */; };
 		AA91547D29A7A5F400A5DB1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA91547C29A7A5F400A5DB1F /* Assets.xcassets */; };
 		AA91548029A7A5F400A5DB1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA91547E29A7A5F400A5DB1F /* LaunchScreen.storyboard */; };
 		AA91549429A7A77D00A5DB1F /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = AA91549329A7A77D00A5DB1F /* RxCocoa */; };
@@ -37,7 +36,6 @@
 		AA9154A229A7A88B00A5DB1F /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154A129A7A88B00A5DB1F /* Wallet.swift */; };
 		AA9154A429A7A90300A5DB1F /* RxSwiftHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154A329A7A90300A5DB1F /* RxSwiftHTTPClient.swift */; };
 		AA9154A829A7AA6000A5DB1F /* OpenseaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154A729A7AA6000A5DB1F /* OpenseaRepository.swift */; };
-		AA9154AA29A7AA7000A5DB1F /* AssetLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154A929A7AA7000A5DB1F /* AssetLoadable.swift */; };
 		AA9154B029A7AC3400A5DB1F /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154AF29A7AC3400A5DB1F /* URLBuilder.swift */; };
 		AA9154B329A7B0B000A5DB1F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154B229A7B0B000A5DB1F /* Coordinator.swift */; };
 		AA9154B529A7B0E400A5DB1F /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9154B429A7B0E400A5DB1F /* Interactor.swift */; };
@@ -87,7 +85,6 @@
 		AA9154A129A7A88B00A5DB1F /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		AA9154A329A7A90300A5DB1F /* RxSwiftHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftHTTPClient.swift; sourceTree = "<group>"; };
 		AA9154A729A7AA6000A5DB1F /* OpenseaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenseaRepository.swift; sourceTree = "<group>"; };
-		AA9154A929A7AA7000A5DB1F /* AssetLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetLoadable.swift; sourceTree = "<group>"; };
 		AA9154AF29A7AC3400A5DB1F /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		AA9154B229A7B0B000A5DB1F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		AA9154B429A7B0E400A5DB1F /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
@@ -316,7 +313,6 @@
 		AA9154AB29A7AAFE00A5DB1F /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				AA9154A929A7AA7000A5DB1F /* AssetLoadable.swift */,
 				AA6F321D29A86E1A00AA4925 /* EthererumLoadable.swift */,
 			);
 			path = Domain;
