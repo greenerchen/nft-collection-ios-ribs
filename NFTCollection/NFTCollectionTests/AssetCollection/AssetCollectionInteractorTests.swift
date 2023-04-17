@@ -25,6 +25,18 @@ final class AssetCollectionInteractorTests: XCTestCase {
         XCTAssertEqual(result, anyAssets())
     }
     
+    func test_init_anyEthBalance_presenterPassesAnyEthBalance() throws {
+        let (_, _, presenter, _) = makeSUT(ethBalance: anyEthBalance())
+        
+        let result = try presenter.ethBalance
+            .toBlocking()
+            .first()
+        
+        XCTAssertEqual(presenter.ethBalanceSetCallCount, 0)
+        XCTAssertEqual(result, anyEthBalance())
+    }
+    
+    
     
     // MARK: - Helpers
     
