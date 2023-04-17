@@ -21,7 +21,6 @@
 		AA6F321A29A84F2200AA4925 /* BlueCapsuleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F321929A84F2200AA4925 /* BlueCapsuleButtonStyle.swift */; };
 		AA6F321C29A86DE100AA4925 /* InfuraRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F321B29A86DE100AA4925 /* InfuraRepository.swift */; };
 		AA6F321E29A86E1A00AA4925 /* EthererumLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F321D29A86E1A00AA4925 /* EthererumLoadable.swift */; };
-		AA6F322829ABA15E00AA4925 /* MVVMCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F322729ABA15E00AA4925 /* MVVMCTests.swift */; };
 		AA6F323029ABA2DD00AA4925 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = AA6F322F29ABA2DD00AA4925 /* RxCocoa */; };
 		AA6F323229ABA2E300AA4925 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AA6F323129ABA2E300AA4925 /* RxSwift */; };
 		AA6F323429ABA2F300AA4925 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = AA6F323329ABA2F300AA4925 /* SDWebImage */; };
@@ -77,7 +76,6 @@
 		AA6F321B29A86DE100AA4925 /* InfuraRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfuraRepository.swift; sourceTree = "<group>"; };
 		AA6F321D29A86E1A00AA4925 /* EthererumLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthererumLoadable.swift; sourceTree = "<group>"; };
 		AA6F322529ABA15E00AA4925 /* NFTCollectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NFTCollectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA6F322729ABA15E00AA4925 /* MVVMCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMCTests.swift; sourceTree = "<group>"; };
 		AA91547029A7A5F200A5DB1F /* NFTCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NFTCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA91547329A7A5F200A5DB1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA91547529A7A5F200A5DB1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -190,7 +188,6 @@
 		AA6F322629ABA15E00AA4925 /* NFTCollectionTests */ = {
 			isa = PBXGroup;
 			children = (
-				AA6F322729ABA15E00AA4925 /* MVVMCTests.swift */,
 				AA61508D29E6B05900AB4B93 /* Mocks */,
 			);
 			path = NFTCollectionTests;
@@ -507,7 +504,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA6F322829ABA15E00AA4925 /* MVVMCTests.swift in Sources */,
 				AA61508F29E6B06D00AB4B93 /* GeneratedMocks.swift in Sources */,
 				AABBF40029ECD50900D7BDFF /* GeneratedRIBsMocks.swift in Sources */,
 			);
