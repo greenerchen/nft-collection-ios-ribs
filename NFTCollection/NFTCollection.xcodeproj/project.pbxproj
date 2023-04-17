@@ -20,7 +20,6 @@
 		AA6F321729A84D7C00AA4925 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = AA6F321629A84D7C00AA4925 /* SDWebImage */; };
 		AA6F321A29A84F2200AA4925 /* BlueCapsuleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F321929A84F2200AA4925 /* BlueCapsuleButtonStyle.swift */; };
 		AA6F321C29A86DE100AA4925 /* InfuraRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F321B29A86DE100AA4925 /* InfuraRepository.swift */; };
-		AA6F321E29A86E1A00AA4925 /* EthererumLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F321D29A86E1A00AA4925 /* EthererumLoadable.swift */; };
 		AA6F323029ABA2DD00AA4925 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = AA6F322F29ABA2DD00AA4925 /* RxCocoa */; };
 		AA6F323229ABA2E300AA4925 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AA6F323129ABA2E300AA4925 /* RxSwift */; };
 		AA6F323429ABA2F300AA4925 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = AA6F323329ABA2F300AA4925 /* SDWebImage */; };
@@ -80,7 +79,6 @@
 		AA6F320F29A849A500AA4925 /* AssetDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailViewModel.swift; sourceTree = "<group>"; };
 		AA6F321929A84F2200AA4925 /* BlueCapsuleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueCapsuleButtonStyle.swift; sourceTree = "<group>"; };
 		AA6F321B29A86DE100AA4925 /* InfuraRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfuraRepository.swift; sourceTree = "<group>"; };
-		AA6F321D29A86E1A00AA4925 /* EthererumLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthererumLoadable.swift; sourceTree = "<group>"; };
 		AA6F322529ABA15E00AA4925 /* NFTCollectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NFTCollectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA91547029A7A5F200A5DB1F /* NFTCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NFTCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA91547329A7A5F200A5DB1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -162,7 +160,6 @@
 				AA61508529E6AFD100AB4B93 /* NFTCollectionViewController.swift */,
 				AA61508629E6AFD100AB4B93 /* NFTCollectionBuilder.swift */,
 				AA61508729E6AFD100AB4B93 /* NFTCollectionInteractor.swift */,
-				AA9154AB29A7AAFE00A5DB1F /* Domain */,
 				AABBF3ED29ECBC6F00D7BDFF /* View */,
 				AABBF3E529ECBBD900D7BDFF /* AssetCollectionRouter.swift */,
 				AABBF3E629ECBBD900D7BDFF /* AssetCollectionViewController.swift */,
@@ -344,12 +341,9 @@
 			path = "Asset Detail";
 			sourceTree = "<group>";
 		};
-		AA9154AB29A7AAFE00A5DB1F /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				AA6F321D29A86E1A00AA4925 /* EthererumLoadable.swift */,
 			);
-			path = Domain;
 			sourceTree = "<group>";
 		};
 		AA9154AC29A7AB1100A5DB1F /* View */ = {
@@ -584,7 +578,6 @@
 				AA9154D329A7C10E00A5DB1F /* AssetCollectionCellPresenter.swift in Sources */,
 				AABBF3E929ECBBD900D7BDFF /* AssetCollectionRouter.swift in Sources */,
 				AA6F321C29A86DE100AA4925 /* InfuraRepository.swift in Sources */,
-				AA6F321E29A86E1A00AA4925 /* EthererumLoadable.swift in Sources */,
 				AA91547629A7A5F200A5DB1F /* SceneDelegate.swift in Sources */,
 				AA61508A29E6AFD100AB4B93 /* NFTCollectionBuilder.swift in Sources */,
 				AA61508829E6AFD100AB4B93 /* NFTCollectionRouter.swift in Sources */,

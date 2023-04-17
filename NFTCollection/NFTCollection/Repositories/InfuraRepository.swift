@@ -9,6 +9,10 @@ import Foundation
 import RxSwift
 import ObjectMapper
 
+/// @mockable
+protocol EthererumLoadable {
+    func getEthBalance() -> Single<Float80>
+}
 
 class InfuraRepository {
     private let httpClient: RxSwiftHTTPClient
