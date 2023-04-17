@@ -51,6 +51,7 @@
 		AABBF40729ECE90A00D7BDFF /* RepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBF40629ECE90A00D7BDFF /* RepositoryStub.swift */; };
 		AABBF40929ECEB6700D7BDFF /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = AABBF40829ECEB6700D7BDFF /* RxBlocking */; };
 		AABBF40B29ECEB6E00D7BDFF /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = AABBF40A29ECEB6E00D7BDFF /* RxTest */; };
+		AABBF40E29ECFF8B00D7BDFF /* OpenseaRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBF40D29ECFF8B00D7BDFF /* OpenseaRepositoryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		AABBF3FF29ECD50900D7BDFF /* GeneratedRIBsDependantMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedRIBsDependantMocks.swift; sourceTree = "<group>"; };
 		AABBF40429ECE6F700D7BDFF /* GeneratedRepositoryMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedRepositoryMocks.swift; sourceTree = "<group>"; };
 		AABBF40629ECE90A00D7BDFF /* RepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryStub.swift; sourceTree = "<group>"; };
+		AABBF40D29ECFF8B00D7BDFF /* OpenseaRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenseaRepositoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				AABBF3EE29ECCAA600D7BDFF /* AssetCollection */,
+				AABBF40C29ECFF5C00D7BDFF /* Repositories */,
 				AA61508D29E6B05900AB4B93 /* Mocks */,
 				AABBF40129ECE4F100D7BDFF /* Stubs */,
 			);
@@ -367,6 +370,14 @@
 			path = Stubs;
 			sourceTree = "<group>";
 		};
+		AABBF40C29ECFF5C00D7BDFF /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				AABBF40D29ECFF8B00D7BDFF /* OpenseaRepositoryTests.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -520,6 +531,7 @@
 				AABBF40029ECD50900D7BDFF /* GeneratedRIBsDependantMocks.swift in Sources */,
 				AABBF40729ECE90A00D7BDFF /* RepositoryStub.swift in Sources */,
 				AABBF3F229ECCAD800D7BDFF /* AssetCollectionRouterTests.swift in Sources */,
+				AABBF40E29ECFF8B00D7BDFF /* OpenseaRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

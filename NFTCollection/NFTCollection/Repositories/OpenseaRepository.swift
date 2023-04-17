@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-struct AssetsResult {
+struct AssetsResult: Equatable {
     let assets: [Asset]
     let nextCursor: String?
 }
