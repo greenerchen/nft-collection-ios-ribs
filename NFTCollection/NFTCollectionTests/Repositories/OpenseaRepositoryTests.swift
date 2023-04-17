@@ -34,7 +34,7 @@ final class OpenseaRepositoryTests: XCTestCase {
         }
         
         do {
-            let result = try sut.loadAssets(loadMore: false)
+            _ = try sut.loadAssets(loadMore: false)
                 .toBlocking(timeout: 1.0)
                 .toArray()
         } catch {
