@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA035EA829ED17FC009AC9DA /* InfuraRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA035EA729ED17FC009AC9DA /* InfuraRepositoryTests.swift */; };
 		AA10C43529E3EF1F0012E171 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AA10C43429E3EF1F0012E171 /* README.md */; };
 		AA61508129E6AF3A00AB4B93 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = AA61508029E6AF3A00AB4B93 /* RIBs */; };
 		AA61508F29E6B06D00AB4B93 /* GeneratedRIBsMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA61508E29E6B06D00AB4B93 /* GeneratedRIBsMocks.swift */; };
@@ -65,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA035EA729ED17FC009AC9DA /* InfuraRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfuraRepositoryTests.swift; sourceTree = "<group>"; };
 		AA10C43429E3EF1F0012E171 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		AA61508E29E6B06D00AB4B93 /* GeneratedRIBsMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedRIBsMocks.swift; sourceTree = "<group>"; };
 		AA6F320B29A8492300AA4925 /* AssetDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailCoordinator.swift; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				AABBF40D29ECFF8B00D7BDFF /* OpenseaRepositoryTests.swift */,
+				AA035EA729ED17FC009AC9DA /* InfuraRepositoryTests.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA035EA829ED17FC009AC9DA /* InfuraRepositoryTests.swift in Sources */,
 				AABBF40529ECE6F700D7BDFF /* GeneratedRepositoryMocks.swift in Sources */,
 				AABBF3F129ECCAD800D7BDFF /* AssetCollectionInteractorTests.swift in Sources */,
 				AA61508F29E6B06D00AB4B93 /* GeneratedRIBsMocks.swift in Sources */,

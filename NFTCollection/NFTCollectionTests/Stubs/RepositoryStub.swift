@@ -31,6 +31,10 @@ func anyEthBalance() -> Float80 {
     Float80(1.123456789012345678)
 }
 
+func anyEthBalance2() -> Float80 {
+    Float80(0.567890123456781234)
+}
+
 func anyError() -> Error {
     OpenseaRepositoryError.invalidURL
 }

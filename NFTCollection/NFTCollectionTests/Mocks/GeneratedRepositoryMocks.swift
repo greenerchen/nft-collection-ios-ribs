@@ -10,6 +10,21 @@ import RxSwift
 @testable import NFTCollection
 
 
+final class EthererumLoadableMock: EthererumLoadable {
+    init() { }
+
+
+    private(set) var getEthBalanceCallCount = 0
+    var getEthBalanceHandler: (() -> (Single<Float80>))?
+    func getEthBalance() -> Single<Float80> {
+        getEthBalanceCallCount += 1
+        if let getEthBalanceHandler = getEthBalanceHandler {
+            return getEthBalanceHandler()
+        }
+        fatalError("getEthBalanceHandler returns can't have a default value thus its handler must be set")
+    }
+}
+
 final class AssetsLoadableMock: AssetsLoadable {
     init() { }
 

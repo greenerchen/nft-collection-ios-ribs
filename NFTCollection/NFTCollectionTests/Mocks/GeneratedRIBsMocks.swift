@@ -64,21 +64,6 @@ final class AssetCollectionDependencyMock: AssetCollectionDependency {
 
 }
 
-final class EthererumLoadableMock: EthererumLoadable {
-    init() { }
-
-
-    private(set) var getEthBalanceCallCount = 0
-    var getEthBalanceHandler: (() -> (Single<Float80>))?
-    func getEthBalance() -> Single<Float80> {
-        getEthBalanceCallCount += 1
-        if let getEthBalanceHandler = getEthBalanceHandler {
-            return getEthBalanceHandler()
-        }
-        fatalError("getEthBalanceHandler returns can't have a default value thus its handler must be set")
-    }
-}
-
 final class AssetCollectionRoutingMock: AssetCollectionRouting {
     init() { }
     init(lifecycle: Observable<RouterLifecycle> = PublishSubject<RouterLifecycle>(), interactable: Interactable = InteractableMock(), children: [Routing] = [Routing](), viewControllable: ViewControllable = ViewControllableMock()) {
