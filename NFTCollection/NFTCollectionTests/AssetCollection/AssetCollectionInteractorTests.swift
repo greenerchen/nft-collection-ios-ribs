@@ -59,16 +59,44 @@ final class AssetCollectionInteractorTests: XCTestCase {
         }
     }
     
+    func test_fetchEthBalance_receivesAnyEthBalance_expectPresenterShowsTheBalance() throws {
+        let exp = expectation(description: "Wait for loading")
+        let ethLoader = EthererumLoadableMock()
+        ethLoader.getEthBalanceHandler = {
+            return Single<Float80>.create { single in
+                single(.success(anyEthBalance()))
+                exp.fulfill()
+                return Disposables.create()
+            }
+        }
+        let (interactor, _, presenter) = makeSUT(ethBalance: Float80(0.0), ethLoader: ethLoader)
+        
+        XCTAssertEqual(presenter.updateEthBalanceCallCount, 1)
+        presenter.updateEthBalanceHandler = { balance in
+            XCTAssertEqual(balance, 0.0)
+        }
+        
+        interactor.fetchEthBalance()
+        wait(for: [exp], timeout: 1.0)
+        
+        XCTAssertEqual(presenter.updateAssetsCallCount, 2)
+        presenter.updateEthBalanceHandler = { balance in
+            XCTAssertEqual(balance, anyEthBalance())
+        }
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(
         assets: [Asset] = [],
         ethBalance: Float80 = 0.0,
-        assetLoader: AssetsLoadable = AssetsLoadableMock()
+        assetLoader: AssetsLoadable = AssetsLoadableMock(),
+        ethLoader: EthererumLoadable = EthererumLoadableMock()
     ) -> (AssetCollectionInteractor, AssetCollectionRoutingMock, AssetCollectionPresentableMock) {
         let presenter = AssetCollectionPresentableMock(assets: BehaviorSubject<[Asset]>(value: assets), ethBalance: BehaviorSubject<Float80>(value: ethBalance))
         let interator = AssetCollectionInteractor(presenter: presenter)
         interator.assetLoader = assetLoader
+        interator.ethLoader = ethLoader
         presenter.listener = interator
         let router = AssetCollectionRoutingMock(interactable: interator)
         return (interator, router, presenter)
