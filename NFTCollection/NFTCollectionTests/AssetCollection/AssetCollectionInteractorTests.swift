@@ -85,7 +85,7 @@ final class AssetCollectionInteractorTests: XCTestCase {
         }
     }
     
-    func test_loadMoreAssets_expectPresenterShowsAccumalatedAssets() {
+    func test_loadMoreAssets_receivesMoreAssets_expectPresenterShowsAccumalatedAssets() {
         let exp = expectation(description: "Wait for loading")
         let assetLoader = AssetsLoadableMock()
         assetLoader.loadAssetsHandler = { loadMore in
@@ -108,6 +108,32 @@ final class AssetCollectionInteractorTests: XCTestCase {
         XCTAssertEqual(presenter.updateAssetsCallCount, 2)
         presenter.updateAssetsHandler = { newAssets in
             XCTAssertEqual(newAssets, anyAssets() + anyThreeAssets())
+        }
+    }
+    
+    func test_loadMoreAssets_receivesNoAssets_expectPresenterShowsTheExistingAssets() {
+        let exp = expectation(description: "Wait for loading")
+        let assetLoader = AssetsLoadableMock()
+        assetLoader.loadAssetsHandler = { loadMore in
+            return Single<AssetsResult>.create { single in
+                single(.success(AssetsResult(assets: emptyAssets(), nextCursor: nil)))
+                exp.fulfill()
+                return Disposables.create()
+            }
+        }
+        let (interactor, _, presenter) = makeSUT(assets: anyAssets(), assetLoader: assetLoader)
+        
+        XCTAssertEqual(presenter.updateAssetsCallCount, 1)
+        presenter.updateAssetsHandler = { newAssets in
+            XCTAssertEqual(newAssets, anyAssets())
+        }
+        
+        interactor.fetchAssets(loadMore: true)
+        wait(for: [exp], timeout: 1.0)
+        
+        XCTAssertEqual(presenter.updateAssetsCallCount, 2)
+        presenter.updateAssetsHandler = { newAssets in
+            XCTAssertEqual(newAssets, anyAssets())
         }
     }
     
