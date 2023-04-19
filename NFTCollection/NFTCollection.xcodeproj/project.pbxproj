@@ -345,25 +345,6 @@
 			path = AssetCollection;
 			sourceTree = "<group>";
 		};
-		AABBF3F329ECCB7000D7BDFF /* NFT */ = {
-			isa = PBXGroup;
-			children = (
-				AABBF3F429ECCB9400D7BDFF /* NFTRouter.swift */,
-				AABBF3F529ECCB9400D7BDFF /* NFTBuilder.swift */,
-				AABBF3F629ECCB9400D7BDFF /* NFTInteractor.swift */,
-			);
-			path = NFT;
-			sourceTree = "<group>";
-		};
-		AABBF3FA29ECCDB400D7BDFF /* NFT */ = {
-			isa = PBXGroup;
-			children = (
-				AABBF3FB29ECCDC000D7BDFF /* NFTInteractorTests.swift */,
-				AABBF3FC29ECCDC000D7BDFF /* NFTRouterTests.swift */,
-			);
-			path = NFT;
-			sourceTree = "<group>";
-		};
 		AABBF40129ECE4F100D7BDFF /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
