@@ -21,6 +21,7 @@ protocol AssetCollectionPresentable: Presentable {
     var ethBalance: BehaviorSubject<Float80> { get }
     
     func updateAssets(with newAssets: [Asset])
+    func updateEthBalance(with newBalance: Float80)
 }
 
 /// @mockable
@@ -75,7 +76,7 @@ extension AssetCollectionInteractor: AssetCollectionPresentableListener {
             .subscribe { [weak self] result in
                 guard case let .success(balance) = result else { return }
                 self?.wallet.balance = balance
-                self?.presenter.ethBalance.onNext(balance)
+                self?.presenter.updateEthBalance(with: balance)
             }
             .disposed(by: bag)
     }

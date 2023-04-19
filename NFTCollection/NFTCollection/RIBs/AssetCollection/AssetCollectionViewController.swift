@@ -108,4 +108,8 @@ final class AssetCollectionViewController: UIViewController, AssetCollectionPres
     func updateAssets(with newAssets: [Asset]) {
         assets.onNext(newAssets)
     }
+    
+    func updateEthBalance(with newBalance: Float80) {
+        ethBalance.onNext(newBalance)
+    }
 }

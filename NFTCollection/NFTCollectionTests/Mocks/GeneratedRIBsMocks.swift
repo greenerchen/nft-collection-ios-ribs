@@ -195,6 +195,16 @@ final class AssetCollectionPresentableMock: AssetCollectionPresentable {
         }
         
     }
+
+    private(set) var updateEthBalanceCallCount = 0
+    var updateEthBalanceHandler: ((Float80) -> ())?
+    func updateEthBalance(with newBalance: Float80)  {
+        updateEthBalanceCallCount += 1
+        if let updateEthBalanceHandler = updateEthBalanceHandler {
+            updateEthBalanceHandler(newBalance)
+        }
+        
+    }
 }
 
 final class AssetCollectionListenerMock: AssetCollectionListener {

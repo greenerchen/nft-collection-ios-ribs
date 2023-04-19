@@ -15,12 +15,21 @@ final class AssetCollectionInteractorTests: XCTestCase {
 
     // MARK: - Tests
 
-    func test_init_withEmptyAssets_presenterShowsEmptyAssets() throws {
+    func test_init_withEmptyAssets_expectPresenterShowsEmptyAssets() throws {
         let (_, _, presenter) = makeSUT(assets: emptyAssets())
         
         XCTAssertEqual(presenter.updateAssetsCallCount, 1)
         presenter.updateAssetsHandler = { newAssets in
             XCTAssertEqual(newAssets, emptyAssets())
+        }
+    }
+    
+    func test_init_withAnyEthBalance_expectPresenterShowsAnyEthBalance() throws {
+        let (_, _, presenter) = makeSUT(ethBalance: anyEthBalance())
+        
+        XCTAssertEqual(presenter.updateEthBalanceCallCount, 1)
+        presenter.updateEthBalanceHandler = { newBalance in
+            XCTAssertEqual(newBalance, anyEthBalance())
         }
     }
     
