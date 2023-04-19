@@ -9,13 +9,19 @@ import RIBs
 
 /// @mockable
 protocol AssetCollectionDependency: Dependency {
-    // TODO: Declare the set of dependencies required by this RIB, but cannot be
-    // created by this RIB.
+    var wallet: Wallet { get set }
+    var assetLoader: AssetsLoadable { get set }
+    var ethLoader: EthererumLoadable { get set }
 }
 
 final class AssetCollectionComponent: Component<AssetCollectionDependency> {
-
-    // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
+    var wallet: Wallet = Wallet(etherAddress: "0x19818f44faf5a217f619aff0fd487cb2a55cca65", balance: 0.0)
+    lazy var assetLoader: AssetsLoadable = {
+        OpenseaRepository(httpClient: RxHTTPClient(), wallet: wallet)
+    }()
+    lazy var ethLoader: EthererumLoadable = {
+        InfuraRepository(httpClient: RxHTTPClient(), wallet: wallet)
+    }()
 }
 
 // MARK: - Builder
@@ -34,6 +40,9 @@ final class AssetCollectionBuilder: Builder<AssetCollectionDependency>, AssetCol
         let component = AssetCollectionComponent(dependency: dependency)
         let viewController = AssetCollectionViewController()
         let interactor = AssetCollectionInteractor(presenter: viewController)
+        interactor.wallet = component.wallet
+        interactor.assetLoader = component.assetLoader
+        interactor.ethLoader = component.ethLoader
         interactor.listener = listener
         return AssetCollectionRouter(interactor: interactor, viewController: viewController)
     }

@@ -60,8 +60,33 @@ final class AssetCollectionInteractableMock: AssetCollectionInteractable {
 
 final class AssetCollectionDependencyMock: AssetCollectionDependency {
     init() { }
+    init(wallet: Wallet, assetLoader: AssetsLoadable, ethLoader: EthererumLoadable) {
+        self._wallet = wallet
+        self._assetLoader = assetLoader
+        self._ethLoader = ethLoader
+    }
 
 
+    private(set) var walletSetCallCount = 0
+    private var _wallet: Wallet!  { didSet { walletSetCallCount += 1 } }
+    var wallet: Wallet {
+        get { return _wallet }
+        set { _wallet = newValue }
+    }
+
+    private(set) var assetLoaderSetCallCount = 0
+    private var _assetLoader: AssetsLoadable!  { didSet { assetLoaderSetCallCount += 1 } }
+    var assetLoader: AssetsLoadable {
+        get { return _assetLoader }
+        set { _assetLoader = newValue }
+    }
+
+    private(set) var ethLoaderSetCallCount = 0
+    private var _ethLoader: EthererumLoadable!  { didSet { ethLoaderSetCallCount += 1 } }
+    var ethLoader: EthererumLoadable {
+        get { return _ethLoader }
+        set { _ethLoader = newValue }
+    }
 }
 
 final class AssetCollectionRoutingMock: AssetCollectionRouting {

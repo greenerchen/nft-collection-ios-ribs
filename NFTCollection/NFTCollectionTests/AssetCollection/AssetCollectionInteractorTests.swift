@@ -146,11 +146,11 @@ final class AssetCollectionInteractorTests: XCTestCase {
         ethLoader: EthererumLoadable = EthererumLoadableMock()
     ) -> (AssetCollectionInteractor, AssetCollectionRoutingMock, AssetCollectionPresentableMock) {
         let presenter = AssetCollectionPresentableMock(assets: BehaviorSubject<[Asset]>(value: assets), ethBalance: BehaviorSubject<Float80>(value: ethBalance))
-        let interator = AssetCollectionInteractor(presenter: presenter)
-        interator.assetLoader = assetLoader
-        interator.ethLoader = ethLoader
-        presenter.listener = interator
-        let router = AssetCollectionRoutingMock(interactable: interator)
-        return (interator, router, presenter)
+        let interactor = AssetCollectionInteractor(presenter: presenter)
+        interactor.assetLoader = assetLoader
+        interactor.ethLoader = ethLoader
+        presenter.listener = interactor
+        let router = AssetCollectionRoutingMock(interactable: interactor)
+        return (interactor, router, presenter)
     }
 }

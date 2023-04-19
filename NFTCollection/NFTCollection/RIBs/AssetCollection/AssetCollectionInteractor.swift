@@ -36,9 +36,9 @@ final class AssetCollectionInteractor: PresentableInteractor<AssetCollectionPres
 
     // MARK: RxSwift Subjects
     
-    var wallet = Wallet(etherAddress: "0x19818f44faf5a217f619aff0fd487cb2a55cca65", balance: 0.0)
-    lazy var assetLoader: AssetsLoadable = OpenseaRepository(httpClient: RxHTTPClient(), wallet: wallet)
-    lazy var ethLoader: EthererumLoadable = InfuraRepository(httpClient: RxHTTPClient(), wallet: wallet)
+    var wallet: Wallet!
+    var assetLoader: AssetsLoadable!
+    var ethLoader: EthererumLoadable!
     
     private let bag = DisposeBag()
     
