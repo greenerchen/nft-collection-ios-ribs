@@ -372,6 +372,7 @@
 				AA6F322129ABA15E00AA4925 /* Sources */,
 				AA6F322229ABA15E00AA4925 /* Frameworks */,
 				AA6F322329ABA15E00AA4925 /* Resources */,
+				AAB22CCC29EFF77300D39501 /* Mockolo */,
 			);
 			buildRules = (
 			);
@@ -483,6 +484,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		AAB22CCC29EFF77300D39501 /* Mockolo */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Mockolo;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd ${SRCROOT}\n/usr/local/bin/mockolo -s ./NFTCollection/RIBs -d ./NFTCollectionTests/Mocks/GeneratedRIBsMocks.swift -i NFTCollection --mock-all --mock-final -mocks ./NFTCollectionTests/Mocks/GeneratedRIBsDependantMocks.swift -j 1\n\n/usr/local/bin/mockolo -s ./NFTCollection/Repositories -d ./NFTCollectionTests/Mocks/GeneratedRepositoryMocks.swift -i NFTCollection --mock-all --mock-final -j 1\n";
+		};
 		AABBF3E429ECB84900D7BDFF /* Mockolo */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

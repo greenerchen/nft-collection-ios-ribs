@@ -185,6 +185,16 @@ final class AssetCollectionPresentableMock: AssetCollectionPresentable {
         get { return _ethBalance }
         set { _ethBalance = newValue }
     }
+
+    private(set) var updateAssetsCallCount = 0
+    var updateAssetsHandler: (([Asset]) -> ())?
+    func updateAssets(with newAssets: [Asset])  {
+        updateAssetsCallCount += 1
+        if let updateAssetsHandler = updateAssetsHandler {
+            updateAssetsHandler(newAssets)
+        }
+        
+    }
 }
 
 final class AssetCollectionListenerMock: AssetCollectionListener {

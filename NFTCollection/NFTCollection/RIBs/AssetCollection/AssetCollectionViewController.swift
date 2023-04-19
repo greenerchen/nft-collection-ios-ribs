@@ -102,4 +102,10 @@ final class AssetCollectionViewController: UIViewController, AssetCollectionPres
     private func fetchAssets(loadMore: Bool) {
         listener?.fetchAssets(loadMore: loadMore)
     }
+    
+    // MARK: - AssetCollectionPresentable Impl
+    
+    func updateAssets(with newAssets: [Asset]) {
+        assets.onNext(newAssets)
+    }
 }

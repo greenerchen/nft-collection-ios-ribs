@@ -19,6 +19,8 @@ protocol AssetCollectionPresentable: Presentable {
     var listener: AssetCollectionPresentableListener? { get set }
     var assets: BehaviorSubject<[Asset]> { get }
     var ethBalance: BehaviorSubject<Float80> { get }
+    
+    func updateAssets(with newAssets: [Asset])
 }
 
 /// @mockable
@@ -60,10 +62,11 @@ final class AssetCollectionInteractor: PresentableInteractor<AssetCollectionPres
 extension AssetCollectionInteractor: AssetCollectionPresentableListener {
     func fetchAssets(loadMore: Bool) {
         assetLoader.loadAssets(loadMore: loadMore)
-            .map { (try self.presenter.assets.value(), $0.assets) }
-            .subscribe { [weak self] (currentAssets, newAssets) in
-                self?.presenter.assets.onNext(currentAssets + newAssets)
-            }
+            .subscribe(onSuccess: { [weak self] newAssets in
+                guard let self = self else { return }
+                guard let currentAssets = try? self.presenter.assets.value() else { return }
+                self.presenter.updateAssets(with: currentAssets + newAssets.assets)
+            })
             .disposed(by: bag)
     }
     
