@@ -33,6 +33,32 @@ final class AssetCollectionInteractorTests: XCTestCase {
         }
     }
     
+    func test_fetchAssets_receivesAnyAssets_expectPresenterShowsAnyAssets() throws {
+        let exp = expectation(description: "Wait for loading")
+        let assetLoader = AssetsLoadableMock()
+        assetLoader.loadAssetsHandler = { loadMore in
+            return Single<AssetsResult>.create { single in
+                single(.success(AssetsResult(assets: anyAssets(), nextCursor: nil)))
+                exp.fulfill()
+                return Disposables.create()
+            }
+        }
+        let (interactor, _, presenter) = makeSUT(assets: emptyAssets(), assetLoader: assetLoader)
+        
+        XCTAssertEqual(presenter.updateAssetsCallCount, 1)
+        presenter.updateAssetsHandler = { newAssets in
+            XCTAssertEqual(newAssets, emptyAssets())
+        }
+        
+        interactor.fetchAssets(loadMore: false)
+        wait(for: [exp], timeout: 1.0)
+        
+        XCTAssertEqual(presenter.updateAssetsCallCount, 2)
+        presenter.updateAssetsHandler = { newAssets in
+            XCTAssertEqual(newAssets, anyAssets())
+        }
+    }
+    
     func test_init_anyAssets_presenterPassesAnyAssets() throws {
         let (_, _, presenter) = makeSUT(assets: anyAssets())
         
