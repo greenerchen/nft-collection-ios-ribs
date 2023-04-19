@@ -27,6 +27,10 @@ func anyAssets() -> [Asset] {
     [anyAsset(), anyAsset()]
 }
 
+func anyThreeAssets() -> [Asset] {
+    [anyAsset(), anyAsset(), anyAsset()]
+}
+
 func anyEthBalance() -> Float80 {
     Float80(1.123456789012345678)
 }
